@@ -1,0 +1,10 @@
+C:\Work3\SnailFis\SnailFis.Common\bin\Release\SnailFis.Common.dll
+C:\Work3\SnailFis\SnailFis.Common\bin\Release\SnailFis.Common.pdb
+C:\Work3\SnailFis\SnailFis.Common\bin\Release\SnailFis.Model.dll
+C:\Work3\SnailFis\SnailFis.Common\bin\Release\SnailFis.Model.pdb
+C:\Work3\SnailFis\SnailFis.Common\bin\Release\SnailFis.Model.dll.config
+C:\Work3\SnailFis\SnailFis.Common\obj\Release\SnailFis.Common.csprojAssemblyReference.cache
+C:\Work3\SnailFis\SnailFis.Common\obj\Release\SnailFis.Common.csproj.CoreCompileInputs.cache
+C:\Work3\SnailFis\SnailFis.Common\obj\Release\SnailFis.Common.csproj.CopyComplete
+C:\Work3\SnailFis\SnailFis.Common\obj\Release\SnailFis.Common.dll
+C:\Work3\SnailFis\SnailFis.Common\obj\Release\SnailFis.Common.pdb

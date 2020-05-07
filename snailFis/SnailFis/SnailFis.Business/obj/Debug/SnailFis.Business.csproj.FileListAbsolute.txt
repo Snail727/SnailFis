@@ -1,0 +1,16 @@
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Business.dll
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Business.pdb
+C:\Work3\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Business.csprojAssemblyReference.cache
+C:\Work3\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Business.csproj.CoreCompileInputs.cache
+C:\Work3\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Business.dll
+C:\Work3\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Business.pdb
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Data.dll
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\MySql.Data.dll
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Data.pdb
+C:\Work3\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Business.csproj.CopyComplete
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Data.dll.config
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Model.dll
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Model.pdb
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Model.dll.config
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Common.dll
+C:\Work3\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Common.pdb

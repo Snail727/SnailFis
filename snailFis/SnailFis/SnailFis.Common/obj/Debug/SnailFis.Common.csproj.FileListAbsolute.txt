@@ -1,0 +1,10 @@
+C:\Work3\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Common.dll
+C:\Work3\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Common.pdb
+C:\Work3\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.csproj.CoreCompileInputs.cache
+C:\Work3\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.dll
+C:\Work3\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.pdb
+C:\Work3\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Model.dll
+C:\Work3\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Model.pdb
+C:\Work3\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Model.dll.config
+C:\Work3\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.csprojAssemblyReference.cache
+C:\Work3\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.csproj.CopyComplete
