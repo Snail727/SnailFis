@@ -4,10 +4,15 @@
     <div :class="classObject">你好</div>
     <div :class="[className1,className2]">你好</div>
     <div :class="[isClass1?className1:'']">你好</div>
+    <div :class="[{'class1':isClass1},className2]">你好</div>
+    <todo-item :class="[isClass1?className1:'']"></todo-item>
+    <div :style="styleObject">你好</div>
   </div>
 </template>
 
 <script>
+import Vue from "vue";
+Vue.component('todo-item',{template:'<div>你好</div>'})
 export default {
   data(){
     return{
@@ -19,6 +24,9 @@ export default {
       },
       className1:"class1",
       className2:"class2",
+      styleObject:{
+          background:'pink',
+      },
     }
   }
 }
