@@ -3,8 +3,10 @@
       <ol><li v-for="(model,index) in liList" :key="model.name">{{index}}---{{model.name}}</li></ol>
       <button @click="pushData">添加数据</button>
       <ol><li v-for="(model,name,index) of userObj" :key="model.name">{{index}}---{{name}}---{{model}}</li></ol>
-      <ol><li v-for="n in 10" :key="n">{{n}}</li></ol>
-      <todo-item v-for="n of 9" :key="n"></todo-item>
+      <ol><li v-for="n in 4" :key="n">{{n}}</li></ol>
+      <todo-item v-for="n of 3" :key="n"></todo-item>
+      <div is="todo-item" v-for="n of 3" :key="n"></div>
+      <template v-for="n of 2"><p :key="n">{{n}}</p></template>
   </div>
 </template>
 

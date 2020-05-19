@@ -7,6 +7,9 @@
     <router-link to="/Demo2">Go to demo(样式绑定)</router-link>
     <router-link to="/Demo3">Go to demo(条件渲染)</router-link>
     <router-link to="/Demo4">Go to demo(列表渲染)</router-link>
+    <router-link to="/Demo5">Go to demo(事件处理)</router-link>
+    <router-link to="/Demo6">Go to demo(表单输入绑定)</router-link>
+    <router-link to="/Demo7">Go to demo(组件基础)</router-link>
   </p>
   <div style="border: 1px solid red;">
   <router-view></router-view>
