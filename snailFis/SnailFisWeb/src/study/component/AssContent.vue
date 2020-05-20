@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click="id=0">Go to demo(介绍)</button>
-    <button @click="id=1">Go to demo(模板语法、计算属性和侦听器)</button>
+    <button @click="id=0">Go to demo(组件注册、prop)</button>
+    <button @click="id=1">Go to demo(自定义事件)</button>
     
     <div style="border:1px solid orange;">
         <demo v-if="id==0"></demo>

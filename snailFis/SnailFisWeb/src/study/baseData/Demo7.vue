@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import Vue from "vue";
 var todoItems =
     {
         props:['todo','sizeNum'],
