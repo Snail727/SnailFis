@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import BtContent from '@/baseData/BtContent'
+import BtContent from '@/study/baseData/BtContent'
+import AssContent from '@/study/component/AssContent'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/BtContent',
       name: 'BtContent',
       component: BtContent
+    },
+    {
+      path: '/AssContent',
+      name: 'AssContent',
+      component: AssContent
     }
   ]
 })
