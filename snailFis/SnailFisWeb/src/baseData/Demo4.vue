@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import Vue from "vue";
-Vue.component('todo-item',{template:'<div>你好</div>'})
 export default {
   data(){
     return{

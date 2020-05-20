@@ -9,6 +9,7 @@
     <p id='no5'>data5:<button @[eventName]="change">触发事件</button><button @click="changeEvents">改变事件</button></p>
     <hr>
     <span>data6:<input v-model.number="data6" type="number">+<input v-model.number="data7" type="number">={{sumData}}-----{{data8}}</span>
+    <todo-item></todo-item>
   </div>
 </template>
 

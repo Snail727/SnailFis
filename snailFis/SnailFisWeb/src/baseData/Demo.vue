@@ -6,13 +6,13 @@
     <span>data4:<ol><li :key=i v-for="(item,i) in data4" >{{item.text}}</li></ol></span><br>
     <span>data5:{{data5}}<button v-on:click="reverse">反转</button></span><br>
     <span>data6:{{data6}}<input v-model="data6"></span><br>
-    <span>data7:<ol><todo-item :todo="data7"></todo-item></ol></span><br>
+    <span>data7:<ol><todo-items :todo="data7"></todo-items></ol></span><br>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
-Vue.component('todo-item',{props:['todo'],template:'<li>{{todo.text}}</li>'})
+Vue.component('todo-items',{props:['todo'],template:'<li>{{todo.text}}</li>'})
 export default {
   data(){
     return{

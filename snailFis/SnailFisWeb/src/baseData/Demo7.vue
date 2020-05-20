@@ -1,12 +1,12 @@
 <template>
   <div>
-      <div :style="{fontSize:num1+'px'}"><todo-item v-for="item in textArrs" :key="item.title" :todo="item" @changeNum="changeNumss" :sizeNum="num1"></todo-item></div>
+      <div :style="{fontSize:num1+'px'}"><todo-items v-for="item in textArrs" :key="item.title" :todo="item" @changeNum="changeNumss" :sizeNum="num1"></todo-items></div>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
-Vue.component('todo-item',
+var todoItems =
     {
         props:['todo','sizeNum'],
         data(){
@@ -26,8 +26,8 @@ Vue.component('todo-item',
         `,
 
     }
-)
 export default {
+    components:{"todo-items":todoItems},
   data(){
     return{
         textArrs:[{title:"世界和平",content:"希望世界和平，永无战乱"}
