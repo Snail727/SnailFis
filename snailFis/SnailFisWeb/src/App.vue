@@ -2,16 +2,9 @@
   <div id="app">
   <h1>Hello App!</h1>
   <p>
-    <router-link to="/Demo">Go to demo(介绍)</router-link>
-    <router-link to="/Demo1">Go to demo(模板语法、计算属性和侦听器)</router-link>
-    <router-link to="/Demo2">Go to demo(样式绑定)</router-link>
-    <router-link to="/Demo3">Go to demo(条件渲染)</router-link>
-    <router-link to="/Demo4">Go to demo(列表渲染)</router-link>
-    <router-link to="/Demo5">Go to demo(事件处理)</router-link>
-    <router-link to="/Demo6">Go to demo(表单输入绑定)</router-link>
-    <router-link to="/Demo7">Go to demo(组件基础)</router-link>
+    <router-link to="/BtContent">Go to demo(基础)</router-link>
   </p>
-  <div style="border: 1px solid red;">
+  <div>
   <router-view></router-view>
   </div>
 </div>
