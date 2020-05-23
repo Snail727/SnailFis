@@ -8,7 +8,7 @@
       <div>
         <template v-if="isUser">
             <label>userName</label>
-            <input key="userName">
+            <input key="email">
         </template>
         <template v-else>
             <label>email</label>
