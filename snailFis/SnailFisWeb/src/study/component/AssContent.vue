@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import demo from "./Demo.vue";
-import demo1 from "./Demo1.vue";
+import demo from "@/study/component/Demo.vue";
+import demo1 from "@/study/component/Demo1.vue";
 export default {
     components:{demo,demo1},
     data(){
