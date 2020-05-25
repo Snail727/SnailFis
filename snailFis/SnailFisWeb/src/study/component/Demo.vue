@@ -8,9 +8,9 @@
 <script>
 import Vue from "vue";
 Vue.component('first-component',{template:'<span>第一个组件,全局类型</span>'})//创建全局组件，需要引入vue
-var secondComponent ={template:'<span>第二个组件，局部类型</span>'}
+var SecondComponent ={template:'<span>第二个组件，局部类型</span>'}
 export default {
-  components:{"second-component":secondComponent},
+  components:{"second-component":SecondComponent},
   data(){
     return{
     }

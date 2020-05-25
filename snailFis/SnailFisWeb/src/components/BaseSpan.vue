@@ -1,16 +1,19 @@
 <template>
-  <span>{{PostTitle}}<button @click="str1='sdfsdfsdff'">change</button>{{str1}}<button @click="str2='we3234ew'">change</button>{{str2}}</span>
+  <span>{{testStr}}<button @click="str1='sdfsdfsdff'">change</button></span>
 </template>
 
 <script>
 export default {
-    inheritAttrs: false,
-    props:["PostTitle"],
+    props:["testStr"],
     data(){
         return{
-            str1:this.PostTitle,
-            str2:"this.str1"
+            str1:"",
         }
-    }
+    },
+    watch:{
+        str1:function(newVal){
+            this.$emit('update:test-str',newVal)
+        }
+    },
 }
 </script>

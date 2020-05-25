@@ -1,11 +1,14 @@
 <template>
     <div>
-        <base-span :PostTitle="str1" title="str1"></base-span>
+        <base-span :test-str.sync="str1"></base-span>
+        {{str1}}
     </div>
 </template>
 
 <script>
 export default {
+    props:{
+    },
     data(){  
         return{
             str1:"ceshi",
