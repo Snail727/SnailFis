@@ -8,14 +8,8 @@
 export default {
     data(){
         return{
-            str1:"1",
+            str1:"2",
         }
     },
-    methods:{
-      change(){
-        console.log(this.$root);
-        //this.$root.str2="sfsdfsd";
-      }
-    }
 }
 </script>

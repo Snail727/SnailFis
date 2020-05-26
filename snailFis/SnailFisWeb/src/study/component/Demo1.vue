@@ -1,6 +1,8 @@
 <template>
     <div>
-        <base-span @focus="fun1"></base-span>
+        <base-span  ref="aaa" id="a" ></base-span>
+        <base-input ref="aaa"  id="b"></base-input>
+        <button @click="change">change</button>
     </div>
 </template>
 
@@ -10,13 +12,14 @@ export default {
     },
     data(){  
         return{
-            str1:"ceshi",
+            bool1:true,
+            str1:"",
+            str2:"123",
         }
     },
     methods:{ 
-        fun1(){
-            // alert("help");
-            console.log("help");
+        change(){
+            console.log(this.$refs)
         }
     }
 }
