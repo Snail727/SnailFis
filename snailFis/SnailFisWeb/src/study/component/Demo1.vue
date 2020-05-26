@@ -1,7 +1,6 @@
 <template>
     <div>
-        <base-span :test-str.sync="str1"></base-span>
-        {{str1}}
+        <base-span @focus="fun1"></base-span>
     </div>
 </template>
 
@@ -15,7 +14,10 @@ export default {
         }
     },
     methods:{ 
-
+        fun1(){
+            // alert("help");
+            console.log("help");
+        }
     }
 }
 </script>
