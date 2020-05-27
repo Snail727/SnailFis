@@ -1,26 +1,21 @@
 <template>
     <div>
-        <base-span  ref="aaa" id="a" ></base-span>
-        <base-input ref="aaa"  id="b"></base-input>
-        <button @click="change">change</button>
+        <button @click="bool1=!bool1">change</button>
+        <demo-span v-if="bool1"></demo-span>
     </div>
 </template>
 
 <script>
 export default {
-    props:{
+    components:{
+        "demo-span":()=>import("./DemoSpan")
     },
     data(){  
         return{
-            bool1:true,
-            str1:"",
-            str2:"123",
+            bool1:false,
         }
     },
-    methods:{ 
-        change(){
-            console.log(this.$refs)
-        }
+    methods:{
     }
 }
 </script>
