@@ -4,6 +4,7 @@
   <p>
     <router-link to="/BtContent">Go to demo(基础)</router-link>
     <router-link to="/AssContent">Go to demo(组件)</router-link>
+    <router-link to="/RouterContent">Go to demo(路由)</router-link>
   </p>
   <div>
   <router-view></router-view>
