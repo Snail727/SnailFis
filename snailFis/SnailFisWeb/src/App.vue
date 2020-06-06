@@ -6,6 +6,7 @@
     <router-link to="/BtContent">Go to demo(基础)</router-link>
     <router-link to="/AssContent">Go to demo(组件)</router-link>
     <router-link to="/RouterContent">Go to demo(路由)</router-link>
+    <router-link to="/VuexContent">Go to demo(Vuex)</router-link>
   </p>
   <div style="border:1px solid red;float:left;width:10%;">
   <router-view name="menu"></router-view>

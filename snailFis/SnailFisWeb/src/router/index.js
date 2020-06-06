@@ -7,6 +7,7 @@ import AssContent from '@/study/component/AssContent'
 import RouterContent from '@/study/routers/RouterContent'
 import RouterChild from '@/study/routers/RouterChild'
 import First from '@/study/routers/First'
+import VuexContent from '@/study/vuexs/VuexContent'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
         {path:'',component:First},
         {path:'RouterChild',component:RouterChild},
       ]
-    }
+    },
+    {
+      path: '/VuexContent',
+      name: 'VuexContent',
+      component: VuexContent
+    },
   ]
 })
