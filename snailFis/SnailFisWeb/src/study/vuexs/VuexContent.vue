@@ -9,12 +9,14 @@
 
 <script>
 import demo from "@/study/vuexs/Demo.vue";
+import demo1 from "@/study/vuexs/Demo1.vue";
 export default {
-  components:{demo},
+  components:{demo,demo1},
   data(){
     return{
       tabStrs:[
         {id:"demo",name:"简单store"},
+        {id:"demo1",name:"Getter、Mutation、Action"},
       ],
       tabName:"demo",
     }
