@@ -2,7 +2,7 @@
     <div>
         <span v-for="todo in $store.getters.nameTodos" :key="todo.id">{{todo}}</span><br>
         <span v-for="todo in $store.getters.getTodoById(2)" :key="todo.id">{{todo}}</span><br>
-        <span v-for="todo in nameTodos" :key="todo.id">{{todo}}</span><br>
+        <span v-for="todo in maxNameTodos" :key="todo.id">{{todo}}</span><br>
         <span>{{$store.state.count}}</span>
         <button @click="Add1">+1</button>
         <button @click="Add2">+10</button>
@@ -36,16 +36,14 @@ export default {
         },
         Add4:'increment',
         Add5(){
-            this.$store.dispatch('incrementObj',{count:10}).then(()=>{
-                alert('success');
-            });
+            this.$store.dispatch('incrementObj',{count:10}).then((s)=>{alert(s)});
         },
         Add6(){
-            //this.$store.dispatch('increment12',{count:10});
+            this.$store.dispatch('increment12',{count:10});
         }
     }),
     computed:mapGetters({
-        nameTodos:'nameTodos'
+        maxNameTodos:'maxNameTodos'
     }),
 }
 </script>

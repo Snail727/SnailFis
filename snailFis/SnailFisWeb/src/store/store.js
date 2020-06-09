@@ -1,15 +1,14 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import * as Mutations from './mutation-types.js'
-
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+import Vue from "vue";
+import Vuex from "vuex";
+import * as Mutations from '@/store/mutation-types.js'
+Vue.use(Vuex);
+var store = new Vuex.Store({
     state:{
         count:1,
         todos:[
             {id:1,name:"张三"},
             {id:2,name:"李四"},
+            {id:3,name:"王二麻子"},
         ]
     },
     mutations:{
@@ -29,20 +28,29 @@ export default new Vuex.Store({
         },
         getTodoById:(state)=>(id)=>{
             return state.todos.filter(v=>v.id==id);
-        }
+        },
+        maxNameTodos:state=>{
+            return state.todos.filter(v=>v.id>2);
+        },
     },
     actions:{
         incrementObj(context,obj){
-            return new Promise((resolve,reject)=>{
+            return new Promise((resolve, reject)=>{
                 setTimeout(() => {
                     context.commit('incrementObj',obj);
-                    resolve();
+                    resolve('success');
                 }, 1000);
             })
         },
-        // async increment12(context,obj){
-        //     //await context.dispatch('incrementObj',obj);
-        //     //context.commit('increment');
-        // },
+        increment12(context,obj){
+            context.dispatch('incrementObj',obj).then(()=>{
+                context.commit('increment');
+            });
+        },
     },
-})
+});
+
+import Test from "@/store/modules/Test.js";
+store.registerModule("Test", Test);
+
+export default store;
