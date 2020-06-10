@@ -1,7 +1,6 @@
 <template>
     <div>
-        {{num1 | numChange(num1) | numChange(num1)}}{{num1}}
-        {{num1+1 | numChange }}
+        <input v-focus>
     </div>
 </template>
 

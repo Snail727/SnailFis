@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store/store.js'
 import storeMapping from './store/storeMapping.js'
+import Directives from './Directives.js'
 import BaseComponent from '@/components'
 import Elementui from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
@@ -28,3 +29,4 @@ new Vue({
 
 Vue.use(BaseComponent);
 storeMapping.initMixins(Vue);
+Directives.initMixins(Vue);
