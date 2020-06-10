@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span>store中的count值：{{store_Test_Count}}</span><br>
+        <span>store中的count值：{{store_test_count}}</span><br>
     </div>
 </template>
 

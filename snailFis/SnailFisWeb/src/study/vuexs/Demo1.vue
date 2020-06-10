@@ -17,6 +17,7 @@
 
 import { mapGetters } from 'vuex'
 import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 import * as Mutations from '@/store/mutation-types.js'
 export default {
     data(){

@@ -3,7 +3,7 @@ export default {
         count: 1,
     },
     getters: {
-        store_Test_Count(state) {
+        store_test_count(state) {
             return state.count
         },
     },
