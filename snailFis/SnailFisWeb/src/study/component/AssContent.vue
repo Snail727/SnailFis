@@ -23,8 +23,8 @@ export default {
         {id:"demo1",name:"自定义事件"},
         {id:"demo2",name:"样式过渡"},
         {id:"demo3",name:"过滤器"},
-        {id:"demo4",name:"自定义指令和渲染函数"},
-        {id:"demo5",name:"空白"},
+        {id:"demo4",name:"自定义指令"},
+        {id:"demo5",name:"渲染函数"},
       ],
       tabName:"demo",
     }
