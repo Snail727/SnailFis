@@ -8,6 +8,7 @@ import storeMapping from './store/storeMapping.js'
 import Directives from './Directives.js'
 import BaseComponent from '@/components'
 import Elementui from 'element-ui'
+import PrototypePack from "@/scripts/PrototypePack.js"
 import 'element-ui/lib/theme-chalk/index.css';
 
 
@@ -30,3 +31,4 @@ new Vue({
 Vue.use(BaseComponent);
 storeMapping.initMixins(Vue);
 Directives.initMixins(Vue);
+PrototypePack.initMixins(Vue);
