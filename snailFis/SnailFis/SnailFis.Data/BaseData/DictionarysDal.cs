@@ -157,10 +157,10 @@ namespace SnailFis.Data.BaseData
         /// <returns></returns>
         public void AddDic(DicModel model)
         {
-            var nextId = new BaseOptionsDal(SfId, UserSn).GetNextId("dic_id", "bt_dic");
+            var nextId = new BaseOptionsDal(SfId, UserSn).GetNextId("DicId", "bt_dic");
             var tempModel = ToDicModel(model);
-            var sql = $@"insert into bt_dic(sf_id,dic_id,dic_name,created_by,created_date,modified_by,modified_date) 
-                        values({SfId},{nextId},?dic_name,{UserSn},now(),{UserSn},now())";
+            var sql = $@"insert into bt_dic(SfId,DicId,DicName,CreatedBy,CreatedDate,ModifiedBy,ModifiedDate) 
+                        values({SfId},{nextId},?DicName,{UserSn},now(),{UserSn},now())";
             MySQlHelper.ExecuteScalar(sql, tempModel);
         }
 
@@ -171,9 +171,8 @@ namespace SnailFis.Data.BaseData
         /// <returns></returns>
         public void UpdateDic(DicModel model)
         {
-            var nextId = new BaseOptionsDal(SfId, UserSn).GetNextId("dic_id", "bt_dic");
             var tempModel = ToDicModel(model);
-            var sql = $@"update bt_dic set dic_name=?dic_name,modified_by = {UserSn},modified_date = now() where sf_id={SfId} and dic_id=?dic_id;";
+            var sql = $@"update bt_dic set DicName=?DicName,ModifiedBy = {UserSn},ModifiedDate = now() where SfId={SfId} and DicId=?DicId;";
             MySQlHelper.ExecuteScalar(sql, tempModel);
         }
 
@@ -184,9 +183,9 @@ namespace SnailFis.Data.BaseData
         /// <returns></returns>
         public void AddDice(DiceModel model)
         {
-            var nextId = new BaseOptionsDal(SfId, UserSn).GetNextId("dice_id", "bt_dice");
+            var nextId = new BaseOptionsDal(SfId, UserSn).GetNextId("DiceId", "bt_dice");
             var tempModel = ToDiceModel(model);
-            var sql = $@"insert into bt_dice(sf_id,dic_id,dice_id,dice_name,created_by,created_date,modified_by,modified_date)
+            var sql = $@"insert into bt_dice(SfId,DicId,DiceId,DiceName,CreatedBy,CreatedDate,ModifiedBy,ModifiedDate)
                         values({SfId},?dic_id,{nextId},?dic_name,{UserSn},now(),{UserSn},now())";
             MySQlHelper.ExecuteScalar(sql, tempModel);
         }
@@ -198,9 +197,8 @@ namespace SnailFis.Data.BaseData
         /// <returns></returns>
         public void UpdateDice(DiceModel model)
         {
-            var nextId = new BaseOptionsDal(SfId,UserSn).GetNextId("dice_id","bt_dice");
             var tempModel = ToDiceModel(model);
-            var sql = $@"update bt_dice set dice_name=?dice_name,modified_by = {UserSn},modified_date = now() where sf_id={SfId} and dice_id=?dice_id;";
+            var sql = $@"update bt_dice set DiceName=?DiceName,ModifiedBy = {UserSn},ModifiedDate = now() where sf_id={SfId} and DiceId=?DiceId;";
             MySQlHelper.ExecuteScalar(sql, tempModel);
         }
     }

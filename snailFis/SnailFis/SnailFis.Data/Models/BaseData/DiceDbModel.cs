@@ -15,49 +15,49 @@ namespace SnailFis.Data.Models.BaseData
         /// <summary>
         /// 蜗居id
         /// </summary>
-        [DBColumn("sf_id")]
+        [DBColumn("SfId")]
         public int SfId { get; set; }
 
         /// <summary>
         /// 字典id
         /// </summary>
-        [DBColumn("dic_id")]
+        [DBColumn("DicId")]
         public int DicId { get; set; }
 
         /// <summary>
         /// 字典内容id
         /// </summary>
-        [DBColumn("dice_id")]
+        [DBColumn("DiceId")]
         public int DiceId { get; set; }
 
         /// <summary>
         /// 字典内容名称
         /// </summary>
-        [DBColumn("dice_name")]
+        [DBColumn("DiceName")]
         public string DiceName { get; set; }
 
         /// <summary>
         /// 创建人
         /// </summary>
-        [DBColumn("created_by")]
+        [DBColumn("CreatedBy")]
         public int CreatedBy { get; set; }
 
         /// <summary>
         /// 创建时间
         /// </summary>
-        [DBColumn("created_date")]
+        [DBColumn("CreatedDate")]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// 修改人
         /// </summary>
-        [DBColumn("modified_by")]
+        [DBColumn("ModifiedBy")]
         public int ModifiedBy { get; set; }
 
         /// <summary>
         /// 修改时间
         /// </summary>
-        [DBColumn("modified_date")]
+        [DBColumn("ModifiedDate")]
         public DateTime ModifiedDate { get; set; }
     }
 }
