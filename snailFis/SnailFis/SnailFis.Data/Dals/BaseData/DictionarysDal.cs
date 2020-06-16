@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SnailFis.Data.Dals.Common;
 using SnailFis.Data.Models.BaseData;
 using SnailFis.Data.Utilities;
 using SnailFis.Model.BaseData;
 
-namespace SnailFis.Data.BaseData
+namespace SnailFis.Data.Dals.BaseData
 {
     /// <summary>
     /// 字典功能数据层
     /// </summary>
-    public class DictionarysDal
+    public class DictionarysDal: BaseDal
     {
-        public int SfId { get; }
-        public int UserSn { get; }
-        public DictionarysDal(int sfId, int userSn)
+        public DictionarysDal(int sfId, int userSn) : base(sfId, userSn)
         {
-            SfId = sfId;
-            UserSn = userSn;
         }
 
         /// <summary>

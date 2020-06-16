@@ -8,3 +8,13 @@ C:\Work3\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Model.pdb
 C:\Work3\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Model.dll.config
 C:\Work3\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.csprojAssemblyReference.cache
 C:\Work3\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.csproj.CopyComplete
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Common.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Common.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Model.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Model.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\bin\Debug\SnailFis.Model.dll.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.csprojAssemblyReference.cache
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.csproj.CoreCompileInputs.cache
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.csproj.CopyComplete
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Common\obj\Debug\SnailFis.Common.pdb

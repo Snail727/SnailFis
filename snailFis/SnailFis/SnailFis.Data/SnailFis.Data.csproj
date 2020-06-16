@@ -61,10 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseData\BaseOptionsDal.cs" />
-    <Compile Include="BaseData\DictionarysDal.cs" />
+    <Compile Include="Dals\Common\BaseDal.cs" />
+    <Compile Include="Dals\Common\BaseOptionsDal.cs" />
+    <Compile Include="Dals\BaseData\DictionarysDal.cs" />
+    <Compile Include="Dals\SysData\SysSfDal.cs" />
+    <Compile Include="Dals\SysData\SysUserDal.cs" />
     <Compile Include="Models\BaseData\DicDbModel.cs" />
     <Compile Include="Models\BaseData\DiceDbModel.cs" />
+    <Compile Include="Models\SysData\SysSfDbModel.cs" />
+    <Compile Include="Models\SysData\SysUserDbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\MySQLHelper.cs" />
   </ItemGroup>

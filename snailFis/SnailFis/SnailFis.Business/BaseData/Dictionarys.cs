@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SnailFis.Data.BaseData;
+using SnailFis.Business.Common;
+using SnailFis.Data.Dals.BaseData;
 using SnailFis.Model.BaseData;
 
 namespace SnailFis.Business.BaseData
@@ -11,14 +12,10 @@ namespace SnailFis.Business.BaseData
     /// <summary>
     /// 字典功能逻辑层
     /// </summary>
-    public class Dictionarys
+    public class Dictionarys : BaseBusiness
     {
         DictionarysDal _dal;
-        public int SfId { get; }
-        public int UserSn { get; }
-        public Dictionarys(int sfId, int userSn) {
-            SfId = sfId;
-            UserSn = userSn;
+        public Dictionarys(int sfId, int userSn):base(sfId,userSn) {
             _dal = new DictionarysDal(SfId,UserSn);
         }
         /// <summary>

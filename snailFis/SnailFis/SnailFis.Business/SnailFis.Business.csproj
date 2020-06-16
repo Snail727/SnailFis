@@ -42,9 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseData\Dictionarys.cs" />
+    <Compile Include="Common\BaseBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysData\SysUser.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SnailFis.Common\SnailFis.Common.csproj">
+      <Project>{E41B687A-EDFA-4E77-A9D5-AF3D2069D96F}</Project>
+      <Name>SnailFis.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SnailFis.Data\SnailFis.Data.csproj">
       <Project>{52be80b2-ce1e-477f-8b3f-37b65460695c}</Project>
       <Name>SnailFis.Data</Name>
@@ -54,5 +60,6 @@
       <Name>SnailFis.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
