@@ -26,3 +26,17 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.cspr
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csproj.CopyComplete
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.dll
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.pdb
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\SnailFis.Model.dll.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\SnailFis.Model.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\SnailFis.Model.pdb
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\BouncyCastle.Crypto.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\Google.Protobuf.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\MySql.Data.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\Renci.SshNet.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\Google.Protobuf.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\Renci.SshNet.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csprojAssemblyReference.cache
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csproj.CoreCompileInputs.cache
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csproj.CopyComplete
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.pdb

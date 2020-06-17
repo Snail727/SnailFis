@@ -22,6 +22,16 @@ namespace SnailFis.Business.SysData
         }
 
         /// <summary>
+        /// 根据手机号获取用户列表
+        /// </summary>
+        /// <param name="phone">手机号</param>
+        /// <returns></returns>
+        public List<SysUserModel> GetUserListByPhone(string phone) 
+        {
+            return _dal.GetUserListByPhone(phone);
+        }
+
+        /// <summary>
         /// 新增系统用户
         /// </summary>
         /// <param name="model">系统用户信息</param>
@@ -41,6 +51,19 @@ namespace SnailFis.Business.SysData
         {
             model.PassWord = MD5Helper.MD5Encrypt32(model.PassWord);
             _dal.UpdateUser(model);
+        }
+
+        /// <summary>
+        /// 用户登陆
+        /// </summary>
+        /// <param name="login">登陆信息</param>
+        /// <returns></returns>
+        public bool UserLogin(string phone,string passWord)
+        {
+            var user = _dal.GetUserListByPhone(phone).FirstOrDefault();
+            if (user == null) { return false; }
+            if (user.PassWord == MD5Helper.MD5Encrypt32(passWord)) { return true; }
+            return false;
         }
     }
 }

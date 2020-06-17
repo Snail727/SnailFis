@@ -23,13 +23,27 @@ namespace SnailFis.Data.Dals.SysData
         /// </summary>
         /// <param name="userSn"></param>
         /// <returns></returns>
-        public SysUserModel GetSysUserById(int userSn)
+        public SysUserModel GetSysUserByUserSn(int userSn)
         {
             var sql = $"select * from sys_user where UserSn = {userSn}";
             var tempModel = MySQlHelper.ExecuteListObject<SysUserDbModel>(sql, null).FirstOrDefault();
             if (tempModel == null) { return null; };
             var model = ToSysUserModel(tempModel);
             return model;
+        }
+
+        /// <summary>
+        /// 根据手机号获取用户列表
+        /// </summary>
+        /// <param name="phone">手机号</param>
+        /// <returns></returns>
+        public List<SysUserModel> GetUserListByPhone(string phone)
+        {
+            var sql = $"select * from sys_user where Phone = ?phone";
+            var tempList = MySQlHelper.ExecuteListObject<SysUserDbModel>(sql, null);
+            if (tempList == null) { return null; };
+            var list = tempList.Select(v => ToSysUserModel(v)).ToList();
+            return list;
         }
 
         #region 基类model转换为业务model

@@ -1,4 +1,5 @@
-﻿using SnailFis.Model.SysData;
+﻿using SnailFis.Common;
+using SnailFis.Model.SysData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,21 +20,25 @@ namespace SnailFis.Models.SysData
         /// <summary>
         /// 用户名称
         /// </summary>
+        [Validation(64, "用户名称", true)]
         public string UserName { get; set; }
 
         // <summary>
         /// 密码
         /// </summary>
+        [Validation(64, "密码", true)]
         public string PassWord { get; set; }
 
         // <summary>
         /// 手机号
         /// </summary>
+        [Validation(64, "手机号", true)]
         public string Phone { get; set; }
 
         // <summary>
         /// 备注
         /// </summary>
+        [Validation(64, "备注", false)]
         public string Note { get; set; }
 
         public SysUserModel ToUserModel()
