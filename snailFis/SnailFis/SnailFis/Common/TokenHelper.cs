@@ -10,7 +10,6 @@ using JWT.Serializers;
 
 namespace SnailFis.Common
 {
-
     public static class TokenHelper
     {
         public static string SecretKey = "This is a private key for Server";//这个服务端加密秘钥 属于私钥
@@ -19,9 +18,9 @@ namespace SnailFis.Common
         {
             var payload = new Dictionary<string, dynamic>
             {
-                { "exp", DateTime.Now.AddHours(2) },//到期时间
+                { "exp", DateTimeOffset.UtcNow.AddSeconds(10).ToUnixTimeSeconds() },//到期时间
                 {"UserName", M.UserName},//用于存放当前登录人账户信息
-                {"UserPwd", M.Pwd}//用于存放当前登录人登录密码信息
+                {"UserSn", M.UserSn}//用于存放当前登录人id信息
             };
             IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
             IJsonSerializer serializer = new JsonNetSerializer();
@@ -70,9 +69,9 @@ namespace SnailFis.Common
         public TokenInfo()
         {
             UserName = "andrew";
-            Pwd = "123456";
+            UserSn = "123456";
         }
         public string UserName { get; set; }
-        public string Pwd { get; set; }
+        public string UserSn { get; set; }
     }
 }
