@@ -28,7 +28,7 @@ const toLogin = () => {
 //请求失败后的错误统一处理 
 const errorHandle = (status, other) => {
     switch (status) {
-        case 403:
+        case 401:
             tip('登录过期，请重新登录');
             // 清除token
             // localStorage.removeItem('token');
@@ -74,13 +74,12 @@ axios.interceptors.response.use(
         if (error && error.response) {
             switch (error.response.status) {
                 case 400: tip('请求错误(400)'); break;
-                case 401: tip('未授权，请重新登录(401)'); break;
-                case 403: 
-                tip('登录过期，请重新登录');
+                case 401: tip('未授权，请重新登录(401)'); 
                 setTimeout(() => {
                     toLogin();
                 }, 1000);
                 break;
+                case 403: tip('未知错误(403)'); break;
                 case 404: tip('请求出错(404)'); break;
                 case 408: tip('请求超时(408)'); break;
                 case 500: tip('服务器错误(500)'); break;

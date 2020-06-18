@@ -58,11 +58,9 @@ namespace SnailFis.Business.SysData
         /// </summary>
         /// <param name="login">登陆信息</param>
         /// <returns></returns>
-        public bool UserLogin(string phone,string passWord)
+        public bool UserLogin(string userPass,string passWord)
         {
-            var user = _dal.GetUserListByPhone(phone).FirstOrDefault();
-            if (user == null) { return false; }
-            if (user.PassWord == MD5Helper.MD5Encrypt32(passWord)) { return true; }
+            if (userPass == MD5Helper.MD5Encrypt32(passWord)) { return true; }
             return false;
         }
     }

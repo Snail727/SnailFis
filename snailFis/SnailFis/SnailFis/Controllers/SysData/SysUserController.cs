@@ -71,14 +71,18 @@ namespace SnailFis.Controllers.SysData
         /// <returns></returns>
         public MessageModel UserLogin(LoginData login) 
         {
-            var aaa = TokenHelper.GenToken(new TokenInfo() { });
-            var bbb = TokenHelper.DecodeToken(aaa);
             if (login == null) { return new MessageModel(false, "参数错误！"); }
             var baseMsg = ValidationModel.Validate(login); //验证是否为空和长度
             if (!baseMsg.Success) { return baseMsg; }
-            var isLogin = new SysUser().UserLogin(login.Phone,login.PassWord);
-            if (isLogin) { var token = ""; return new MessageModel(true,"登陆成功",token); }
-            else { return new MessageModel(false,"密码错误"); }
+            var sysUser = new SysUser();
+            var user = sysUser.GetUserListByPhone(login.Phone).FirstOrDefault();
+            if (user == null) { return new MessageModel(false, "该手机号尚未注册"); }
+            var isLogin = new SysUser().UserLogin(user.PassWord,login.PassWord);
+            if (!isLogin) { return new MessageModel(false, "密码错误"); }
+
+            var accesstoken = TokenHelper.GenToken(new TokenInfo() { Sub= "accesstoken", UserName = user.UserName, UserSn = user.UserSn, Phone = user.Phone });
+            var refreshtoken = TokenHelper.GenToken(new TokenInfo() { Sub= "refreshtoken", UserName = user.UserName, UserSn = user.UserSn, Phone = user.Phone });
+            return new MessageModel(true, "登陆成功", new TokenViewModel() { Accesstoken=accesstoken,Refreshtoken=refreshtoken});
         }
     }
 }

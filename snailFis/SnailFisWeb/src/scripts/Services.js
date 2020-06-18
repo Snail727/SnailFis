@@ -1,5 +1,6 @@
 import AxiosPack from "@/scripts/AxiosPack.js";
-const baseUrl = "http://39.101.181.95:8080/snailFis_api";
+// const baseUrl = "http://39.101.181.95:8080/snailFis_api";
+const baseUrl = "http://localhost:63834/snailFis_api";
 const snailFisUrls = {
     Dictionarys: {
         GetDicList:"get /Dictionarys/GetDicList",

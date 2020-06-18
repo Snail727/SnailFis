@@ -364,6 +364,7 @@
     <Compile Include="Models\BaseData\DicViewModel.cs" />
     <Compile Include="Models\SysData\LoginData.cs" />
     <Compile Include="Models\SysData\SysUserEditModel.cs" />
+    <Compile Include="Models\SysData\TokenViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

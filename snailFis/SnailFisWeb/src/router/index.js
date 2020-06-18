@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import HomePage from '@/snailFis/HomePage'
 import Menu from '@/components/Menu'
 import HelloWorld from '@/components/HelloWorld'
 import BtContent from '@/study/baseData/BtContent'
@@ -15,8 +16,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      components: {default:HelloWorld,menu:Menu}
+      name: 'HomePage',
+      components: {default:HomePage}
     },
     {
       path: '/BtContent',

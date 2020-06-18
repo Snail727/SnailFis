@@ -18,9 +18,11 @@ namespace SnailFis.Common
         {
             var payload = new Dictionary<string, dynamic>
             {
-                { "exp", DateTimeOffset.UtcNow.AddSeconds(10).ToUnixTimeSeconds() },//到期时间
-                {"UserName", M.UserName},//用于存放当前登录人账户信息
-                {"UserSn", M.UserSn}//用于存放当前登录人id信息
+                {"Sub", M.Sub },//到期时间
+                {"Exp", DateTimeOffset.UtcNow.AddSeconds(120).ToUnixTimeSeconds() },//到期时间
+                {"UserName", M.UserName},
+                {"UserSn", M.UserSn},
+                {"Phone", M.Phone},
             };
             IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
             IJsonSerializer serializer = new JsonNetSerializer();
@@ -66,12 +68,25 @@ namespace SnailFis.Common
 
     public class TokenInfo
     {
-        public TokenInfo()
-        {
-            UserName = "andrew";
-            UserSn = "123456";
-        }
+        /// <summary>
+        /// 主题
+        /// </summary>
+        public string Sub { get; set; }
+        /// <summary>
+        /// 到期时间
+        /// </summary>
+        public string Exp { get; set; }
+        /// <summary>
+        /// 用户名称
+        /// </summary>
         public string UserName { get; set; }
-        public string UserSn { get; set; }
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        public int UserSn { get; set; }
+        /// <summary>
+        /// 手机号
+        /// </summary>
+        public string Phone { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace SnailFis.Data.Dals.SysData
         /// <returns></returns>
         public List<SysUserModel> GetUserListByPhone(string phone)
         {
-            var sql = $"select * from sys_user where Phone = ?phone";
+            var sql = $"select * from sys_user where Phone = {phone}";
             var tempList = MySQlHelper.ExecuteListObject<SysUserDbModel>(sql, null);
             if (tempList == null) { return null; };
             var list = tempList.Select(v => ToSysUserModel(v)).ToList();
