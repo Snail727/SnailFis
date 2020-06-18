@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnailFis.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -14,7 +15,18 @@ namespace SnailFis.Controllers
         public BaseApiController()
         {
             SfId = 100000001;
-            UserSn = 100001;
+            UserSn = CommonSettings.UserSn;
         }
+    }
+
+    public static class CommonSettings
+    {
+        /// <summary>
+        /// 登陆用户的Token
+        /// </summary>
+        [ThreadStatic]
+        public static TokenInfo TokenData;
+
+        public static int UserSn = 0;
     }
 }

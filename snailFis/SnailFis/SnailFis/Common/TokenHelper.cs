@@ -7,6 +7,7 @@ using System.Web.Script.Serialization;
 using JWT;
 using JWT.Algorithms;
 using JWT.Serializers;
+using SnailFis.Model;
 
 namespace SnailFis.Common
 {
@@ -19,7 +20,7 @@ namespace SnailFis.Common
             var payload = new Dictionary<string, dynamic>
             {
                 {"Sub", M.Sub },//到期时间
-                {"Exp", DateTimeOffset.UtcNow.AddSeconds(120).ToUnixTimeSeconds() },//到期时间
+                {"Exp", M.Exp },//到期时间
                 {"UserName", M.UserName},
                 {"UserSn", M.UserSn},
                 {"Phone", M.Phone},
@@ -31,22 +32,25 @@ namespace SnailFis.Common
             return encoder.Encode(payload, SecretKey);
         }
 
-        public static TokenInfo DecodeToken(string token)
+        public static MessageModel DecodeToken(string token)
         {
             try
             {
-                var json = GetTokenJson(token);
-                TokenInfo info = myJson.Deserialize<TokenInfo>(json);
-                return info;
+                if (string.IsNullOrEmpty(token)) { return new MessageModel(false, "token字符为空"); }
+                var jsonMsg = GetTokenJson(token);
+                if (!jsonMsg.Success) { return jsonMsg; }
+                TokenInfo info = myJson.Deserialize<TokenInfo>(jsonMsg.Msg);
+                var nowStr = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                if (nowStr > info.Exp) { return new MessageModel(false,"token已过期"); }
+                return new MessageModel(true,info);
             }
             catch (Exception)
             {
-
-                throw;
+                return new MessageModel(false,"token转换失败");
             }
         }
 
-        public static string GetTokenJson(string token)
+        public static MessageModel GetTokenJson(string token)
         {
             try
             {
@@ -57,11 +61,11 @@ namespace SnailFis.Common
                 IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
                 IJwtDecoder decoder = new JwtDecoder(serializer,validator,urlEncoder,algorithm);
                 var json = decoder.Decode(token, SecretKey, verify: true);
-                return json;
+                return new MessageModel(true, json); 
             }
             catch (Exception)
             {
-                throw;
+                return new MessageModel(false, "token解密失败");
             }
         }
     }
@@ -75,7 +79,7 @@ namespace SnailFis.Common
         /// <summary>
         /// 到期时间
         /// </summary>
-        public string Exp { get; set; }
+        public long Exp { get; set; }
         /// <summary>
         /// 用户名称
         /// </summary>

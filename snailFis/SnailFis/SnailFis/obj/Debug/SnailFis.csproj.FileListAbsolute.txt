@@ -640,3 +640,6 @@ C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Debug\SnailFis.pdb
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\JWT.dll
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\JWT.pdb
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\JWT.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\JWT.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\JWT.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\JWT.xml
