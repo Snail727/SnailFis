@@ -82,15 +82,32 @@ namespace SnailFis.Controllers.SysData
             var isLogin = new SysUser().UserLogin(user.PassWord,login.PassWord);
             if (!isLogin) { return new MessageModel(false, "密码错误"); }
 
-            var accesstoken = TokenHelper.GenToken(new TokenInfo() {
-                Sub = "accesstoken",Exp = DateTimeOffset.UtcNow.AddHours(2).ToUnixTimeSeconds(),
-                UserName = user.UserName, UserSn = user.UserSn, Phone = user.Phone
+
+            var exp = DateTimeOffset.UtcNow.AddHours(2).ToUnixTimeSeconds();
+            var accesstoken = TokenHelper.GenToken(new TokenInfo()
+            {
+                Sub = "accesstoken",
+                Exp = exp,
+                UserName = user.UserName,
+                UserSn = user.UserSn,
+                Phone = user.Phone
             });
-            var refreshtoken = TokenHelper.GenToken(new TokenInfo() {
-                Sub = "refreshtoken",Exp = DateTimeOffset.UtcNow.AddHours(24).ToUnixTimeSeconds(),
-                UserName = user.UserName, UserSn = user.UserSn, Phone = user.Phone
+            var refreshtoken = TokenHelper.GenToken(new TokenInfo()
+            {
+                Sub = "refreshtoken",
+                Exp = exp,
+                UserName = user.UserName,
+                UserSn = user.UserSn,
+                Phone = user.Phone
             });
-            return new MessageModel(true, "登陆成功", new TokenViewModel() { Accesstoken=accesstoken,Refreshtoken=refreshtoken});
+            /*redis储存refreshtoken*/
+            var tokenData = new TokenViewModel()
+            {
+                Accesstoken = accesstoken,
+                Refreshtoken = refreshtoken,
+                Exp = exp,
+            };
+            return new MessageModel(true, "登陆成功", tokenData);
         }
 
         /// <summary>
@@ -98,17 +115,43 @@ namespace SnailFis.Controllers.SysData
         /// </summary>
         /// <returns></returns>
         [AllowAnonymous]
-        public MessageModel RefreshToken(string refreshtoken)
+        public MessageModel RefreshToken(string refreshtokenStr)
         {
-            var refMsg = TokenHelper.DecodeToken(refreshtoken);
-            if (!refMsg.Success) { throw new TokenException("身份信息已过期，请重新登录"); }
+            var refMsg = TokenHelper.DecodeToken(refreshtokenStr);
+            if (!refMsg.Success){ throw new HttpResponseException(HttpStatusCode.Unauthorized); }
+
+            /*redis获取refreshtoken并进行比对*/
 
             var tokenInfo = (TokenInfo)refMsg.Data;
             var user = new SysUser().GetUserListByPhone(tokenInfo.Phone).FirstOrDefault();
             if (user == null) { return new MessageModel(false, "该手机号尚未注册"); }
 
-            var accesstoken = TokenHelper.GenToken(new TokenInfo() { Sub = "accesstoken", UserName = user.UserName, UserSn = user.UserSn, Phone = user.Phone });
-            return new MessageModel(true, "登陆成功", new TokenViewModel() { Accesstoken = accesstoken });
+
+            var exp = DateTimeOffset.UtcNow.AddHours(2).ToUnixTimeSeconds();
+            var accesstoken = TokenHelper.GenToken(new TokenInfo()
+            {
+                Sub = "accesstoken",
+                Exp = exp,
+                UserName = user.UserName,
+                UserSn = user.UserSn,
+                Phone = user.Phone
+            });
+            var refreshtoken = TokenHelper.GenToken(new TokenInfo()
+            {
+                Sub = "refreshtoken",
+                Exp = exp,
+                UserName = user.UserName,
+                UserSn = user.UserSn,
+                Phone = user.Phone
+            });
+            /*redis储存refreshtoken*/
+            var tokenData = new TokenViewModel()
+            {
+                Accesstoken = accesstoken,
+                Refreshtoken = refreshtoken,
+                Exp = exp,
+            };
+            return new MessageModel(true, "刷新成功", tokenData);
         }
     }
 }

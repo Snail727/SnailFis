@@ -14,6 +14,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(Elementui)
 PrototypePack.initMixins(Vue);
+storeMapping.initMixins(Vue);
+Directives.initMixins(Vue);
 Vue.config.productionTip = false //消息提示的环境配置，设置为开发环境或生产环境
 /* eslint-disable no-new */
 new Vue({
@@ -23,12 +25,7 @@ new Vue({
   components: { App },
   template: '<App/>',
   computed:{
-    count(){
-      this.$store.state.count;
-    }
   }
 })
 
 Vue.use(BaseComponent);
-storeMapping.initMixins(Vue);
-Directives.initMixins(Vue);

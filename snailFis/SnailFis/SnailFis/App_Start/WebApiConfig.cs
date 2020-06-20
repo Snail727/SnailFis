@@ -33,7 +33,7 @@ namespace SnailFis
             );
 
             config.Filters.Add(new ApiResultAttribute());
-            config.Filters.Add(new ApiExceptionResultAttribute());
+            //config.Filters.Add(new ApiExceptionResultAttribute());
             //移除xml返回格式数据
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
         }
@@ -60,7 +60,7 @@ namespace SnailFis
                 else {
                     if (actionContext.ActionDescriptor.GetCustomAttributes<AllowAnonymousAttribute>(true).Count <= 0)
                     {
-                        throw new TokenException("身份信息已过期，请重新登录");
+                        throw new HttpResponseException(HttpStatusCode.Unauthorized);
                     }
                 }
 
@@ -80,21 +80,21 @@ namespace SnailFis
             {
                 base.OnException(actionExecutedContext);
 
-                if (actionExecutedContext.Exception is TokenException)
-                {
-                    var tokenResult = new ApiResultModel()
-                    {
-                        StatusCode = HttpStatusCode.Unauthorized,
-                        Success = false,
-                        Message = "身份信息已过期，请重新登录"
-                    };
-                    HttpResponseMessage tokenHttpResponseMessage = new HttpResponseMessage
-                    {
-                        Content = new StringContent(JsonConvert.SerializeObject(tokenResult), Encoding.GetEncoding("UTF-8"), "application/json")
-                    };
-                    actionExecutedContext.Response = tokenHttpResponseMessage;
-                    return;
-                }
+                //if (actionExecutedContext.Exception is TokenException)
+                //{
+                //    var tokenResult = new ApiResultModel()
+                //    {
+                //        StatusCode = HttpStatusCode.Unauthorized,
+                //        Success = false,
+                //        Message = "身份信息已过期，请重新登录"
+                //    };
+                //    HttpResponseMessage tokenHttpResponseMessage = new HttpResponseMessage
+                //    {
+                //        Content = new StringContent(JsonConvert.SerializeObject(tokenResult), Encoding.GetEncoding("UTF-8"), "application/json")
+                //    };
+                //    actionExecutedContext.Response = tokenHttpResponseMessage;
+                //    return;
+                //}
 
                 ApiResultModel result = new ApiResultModel
                 {

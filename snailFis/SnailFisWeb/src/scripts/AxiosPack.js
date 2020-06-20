@@ -3,10 +3,10 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import {Message} from 'element-ui'
 import qs from "qs";
-
+import router from '@/router'
+import store from '@/store/store.js'
  
 Vue.use(VueAxios, axios)
-
 //消息提示
 const tip = (errorStr)=>{
     Message.error({message: errorStr});
@@ -17,40 +17,16 @@ const tip = (errorStr)=>{
  * 携带当前页面路由，以期在登录页面完成登录后返回当前页面
  */
 const toLogin = () => {
-    router.replace({
-        path: '/',
-        query: {
-            redirect: router.currentRoute.fullPath
-        }
-    });
-}
-
-//请求失败后的错误统一处理 
-const errorHandle = (status, other) => {
-    switch (status) {
-        case 401:
-            tip('登录过期，请重新登录');
-            // 清除token
-            // localStorage.removeItem('token');
-            // store.commit('loginSuccess', null);
-            setTimeout(() => {
-                toLogin();
-            }, 1000);
-            break;
-        case 404:
-            tip('网络请求不存在');
-            break;
-        default:
-            tip(other);
-    }
+  console.log(router);
+  router.push('/Login');
 }
 
 // 请求拦截器
 axios.interceptors.request.use(
     config => {
         // 在发送请求之前做些什么(后期在这里加上token)
-        // const token = store.state.token;
-        // token && (config.headers.Authorization = token);  
+        const token = store.state.TokenInfo.accesstoken;
+        token && (config.headers.Authorization = token);  
         return config;
     },
     error => {

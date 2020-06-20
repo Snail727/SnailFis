@@ -5,6 +5,12 @@ const snailFisUrls = {
     Dictionarys: {
         GetDicList:"get /Dictionarys/GetDicList",
     },
+    SysUser:{
+        AddUser:"/SysUser/AddUser",
+        UpdateUser:"/SysUser/UpdateUser",
+        UserLogin:"/SysUser/UserLogin",
+        RefreshToken:"/SysUser/RefreshToken",
+    }
 };
 const { $get, $postJson, $post, $getFile, $postFile } = AxiosPack;
 let allAxios = {};

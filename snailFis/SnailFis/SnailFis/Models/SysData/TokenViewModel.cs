@@ -9,5 +9,6 @@ namespace SnailFis.Models.SysData
     {
         public string Accesstoken { get; set; }
         public string Refreshtoken { get; set; }
+        public long Exp { get; set; }
     }
 }
