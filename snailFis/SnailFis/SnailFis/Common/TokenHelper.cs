@@ -40,8 +40,8 @@ namespace SnailFis.Common
                 var jsonMsg = GetTokenJson(token);
                 if (!jsonMsg.Success) { return jsonMsg; }
                 TokenInfo info = myJson.Deserialize<TokenInfo>(jsonMsg.Msg);
-                var nowStr = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-                if (nowStr > info.Exp) { return new MessageModel(false,"token已过期"); }
+                var nowDate = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                if (nowDate > info.Exp) { return new MessageModel(false,"token已过期"); }
                 return new MessageModel(true,info);
             }
             catch (Exception)

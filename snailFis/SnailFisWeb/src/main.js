@@ -24,8 +24,6 @@ new Vue({
   store,
   components: { App },
   template: '<App/>',
-  computed:{
-  }
 })
 
 Vue.use(BaseComponent);

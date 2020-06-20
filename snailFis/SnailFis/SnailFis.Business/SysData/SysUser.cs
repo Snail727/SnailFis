@@ -36,10 +36,10 @@ namespace SnailFis.Business.SysData
         /// </summary>
         /// <param name="model">系统用户信息</param>
         /// <returns></returns>
-        public void AddUser(SysUserModel model)
+        public int AddUser(SysUserModel model)
         {
             model.PassWord = MD5Helper.MD5Encrypt32(model.PassWord) ;
-            _dal.AddUser(model);
+            return _dal.AddUser(model);
         }
 
         /// <summary>

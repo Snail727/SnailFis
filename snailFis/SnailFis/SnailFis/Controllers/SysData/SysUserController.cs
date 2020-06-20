@@ -26,8 +26,9 @@ namespace SnailFis.Controllers.SysData
         {
             var validateMsg = ValidateDataSave(model);
             if (!validateMsg.Success) { return validateMsg; }
-            new SysUser().AddUser(model.ToUserModel());
-            return new MessageModel(true, "操作成功");
+            model.UserSn = new SysUser().AddUser(model.ToUserModel());
+
+            return new MessageModel(true, "操作成功", CreatTokenData(model.UserName, model.UserSn, model.Phone));
         }
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace SnailFis.Controllers.SysData
             var validateMsg = ValidateDataSave(model);
             if (!validateMsg.Success) { return validateMsg; }
             new SysUser().UpdateUser(model.ToUserModel());
-            return new MessageModel(true, "操作成功");
+            return new MessageModel(true, "操作成功", CreatTokenData(model.UserName, model.UserSn, model.Phone));
         }
 
         #region 验证数据
@@ -82,32 +83,7 @@ namespace SnailFis.Controllers.SysData
             var isLogin = new SysUser().UserLogin(user.PassWord,login.PassWord);
             if (!isLogin) { return new MessageModel(false, "密码错误"); }
 
-
-            var exp = DateTimeOffset.UtcNow.AddHours(2).ToUnixTimeSeconds();
-            var accesstoken = TokenHelper.GenToken(new TokenInfo()
-            {
-                Sub = "accesstoken",
-                Exp = exp,
-                UserName = user.UserName,
-                UserSn = user.UserSn,
-                Phone = user.Phone
-            });
-            var refreshtoken = TokenHelper.GenToken(new TokenInfo()
-            {
-                Sub = "refreshtoken",
-                Exp = exp,
-                UserName = user.UserName,
-                UserSn = user.UserSn,
-                Phone = user.Phone
-            });
-            /*redis储存refreshtoken*/
-            var tokenData = new TokenViewModel()
-            {
-                Accesstoken = accesstoken,
-                Refreshtoken = refreshtoken,
-                Exp = exp,
-            };
-            return new MessageModel(true, "登陆成功", tokenData);
+            return new MessageModel(true, "登陆成功", CreatTokenData(user.UserName, user.UserSn, user.Phone));
         }
 
         /// <summary>
@@ -115,9 +91,9 @@ namespace SnailFis.Controllers.SysData
         /// </summary>
         /// <returns></returns>
         [AllowAnonymous]
-        public MessageModel RefreshToken(string refreshtokenStr)
+        public MessageModel RefreshToken(TokenViewModel token)
         {
-            var refMsg = TokenHelper.DecodeToken(refreshtokenStr);
+            var refMsg = TokenHelper.DecodeToken(token.Refreshtoken);
             if (!refMsg.Success){ throw new HttpResponseException(HttpStatusCode.Unauthorized); }
 
             /*redis获取refreshtoken并进行比对*/
@@ -126,32 +102,39 @@ namespace SnailFis.Controllers.SysData
             var user = new SysUser().GetUserListByPhone(tokenInfo.Phone).FirstOrDefault();
             if (user == null) { return new MessageModel(false, "该手机号尚未注册"); }
 
+            var tokenData = CreatTokenData(user.UserName, user.UserSn, user.Phone);
+            tokenData.Refreshtoken = "";
+            return new MessageModel(true, "刷新成功", tokenData);
+        }
 
-            var exp = DateTimeOffset.UtcNow.AddHours(2).ToUnixTimeSeconds();
+        private TokenViewModel CreatTokenData(string userName,int userSn,string phone) 
+        {
+            var accesstokenExp = DateTimeOffset.UtcNow.AddHours(2).ToUnixTimeSeconds();
+            var refreshtokenExp = DateTimeOffset.UtcNow.AddDays(30).ToUnixTimeSeconds();
             var accesstoken = TokenHelper.GenToken(new TokenInfo()
             {
                 Sub = "accesstoken",
-                Exp = exp,
-                UserName = user.UserName,
-                UserSn = user.UserSn,
-                Phone = user.Phone
+                Exp = accesstokenExp,
+                UserName = userName,
+                UserSn = userSn,
+                Phone = phone
             });
             var refreshtoken = TokenHelper.GenToken(new TokenInfo()
             {
                 Sub = "refreshtoken",
-                Exp = exp,
-                UserName = user.UserName,
-                UserSn = user.UserSn,
-                Phone = user.Phone
+                Exp = refreshtokenExp,
+                UserName = userName,
+                UserSn = userSn,
+                Phone = phone
             });
             /*redis储存refreshtoken*/
             var tokenData = new TokenViewModel()
             {
                 Accesstoken = accesstoken,
                 Refreshtoken = refreshtoken,
-                Exp = exp,
+                Exp = accesstokenExp,
             };
-            return new MessageModel(true, "刷新成功", tokenData);
+            return tokenData;
         }
     }
 }

@@ -95,13 +95,14 @@ namespace SnailFis.Data.Dals.SysData
         /// </summary>
         /// <param name="model">系统用户主表信息</param>
         /// <returns></returns>
-        public void AddUser(SysUserModel model)
+        public int AddUser(SysUserModel model)
         {
             var nextUserSn = new BaseOptionsDal(0, 0).GetNextUserSn();
             var tempModel = ToSysUserDbModel(model);
             var sql = $@"insert into sys_user(UserSn,UserName,PassWord,Phone,Note,CreatedDate,ModifiedDate) 
                         values({nextUserSn},?UserName,?PassWord,?Phone,?Note,now(),now())";
             MySQlHelper.ExecuteScalar(sql, tempModel);
+            return Convert.ToInt32(nextUserSn);
         }
 
         /// <summary>

@@ -4,6 +4,6 @@ import TokenInfo from "@/store/mappings/TokenInfo.js";
 export default {
     initMixins(Vue) {
       // Vue.mixin(Test);
-      Vue.mixin(TokenInfo);
+      // Vue.mixin(TokenInfo);
     }
   };

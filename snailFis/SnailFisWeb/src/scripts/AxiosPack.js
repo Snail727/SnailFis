@@ -4,7 +4,6 @@ import VueAxios from 'vue-axios'
 import {Message} from 'element-ui'
 import qs from "qs";
 import router from '@/router'
-import store from '@/store/store.js'
  
 Vue.use(VueAxios, axios)
 //消息提示
@@ -17,15 +16,20 @@ const tip = (errorStr)=>{
  * 携带当前页面路由，以期在登录页面完成登录后返回当前页面
  */
 const toLogin = () => {
-  console.log(router);
   router.push('/Login');
 }
-
 // 请求拦截器
 axios.interceptors.request.use(
     config => {
-        // 在发送请求之前做些什么(后期在这里加上token)
-        const token = store.state.TokenInfo.accesstoken;
+        var timestamp = Date.parse(new Date())/1000;
+        var exp = JSON.parse(localStorage.getItem('token')).Exp;
+        var lastDate = exp-timestamp;
+        //token过期时间三十分钟以内获取刷新token
+        if(lastDate>0 & lastDate<1800 & config.url.indexOf("SysUser/RefreshToken") == -1){
+          refresh();
+        }
+        // 在发送请求之前做些什么(在这里加上token)
+        var token = JSON.parse(localStorage.getItem('token')).Accesstoken;
         token && (config.headers.Authorization = token);  
         return config;
     },
@@ -66,12 +70,37 @@ axios.interceptors.response.use(
                 case 505: tip('HTTP版本不受支持(505)'); break;
                 default: tip('连接出错'); break;
             }
-        } else {
-            tip('连接服务器失败!');
         }
       return Promise.resolve(error);
     }
 )
+
+/*
+*刷新token
+*/
+const refresh = () =>{
+  var refreshtoken = JSON.parse(localStorage.getItem('token')).Refreshtoken;
+  var url = 'http://localhost:63834/snailFis_api/SysUser/RefreshToken';
+  let _qsData = JSON.stringify({RefreshToken: refreshtoken});
+  axios.post(url, _qsData, {
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }).then((result) => {
+    if(result.Success){
+      localStorage.setItem('token', JSON.stringify(res.Data));
+    }
+    else{
+      setTimeout(() => {
+          toLogin();
+      }, 1000);
+    }
+  }).catch(() => {
+    setTimeout(() => {
+        toLogin();
+    }, 1000);
+  });
+}
 
 export default {
     $get(url, data, completedFunc) {

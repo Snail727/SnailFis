@@ -53,7 +53,7 @@ var store = new Vuex.Store({
 // import Test from "@/store/modules/Test.js";
 // store.registerModule("Test", Test);
 
-import TokenInfo from "@/store/modules/TokenInfo.js";
-store.registerModule("TokenInfo", TokenInfo);
+// import TokenInfo from "@/store/modules/TokenInfo.js";
+// store.registerModule("TokenInfo", TokenInfo);
 
 export default store;
