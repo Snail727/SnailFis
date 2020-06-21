@@ -91,6 +91,7 @@ export default {
     methods:{
         UserLogin(){
             var self =this;
+            console.log(process.env.API_ROOT);
             localStorage.setItem('token', JSON.stringify({}));//清除token
             self.$allAxios.SysUser.UserLogin(self.login).then((res)=>{
                 if(res.Success){

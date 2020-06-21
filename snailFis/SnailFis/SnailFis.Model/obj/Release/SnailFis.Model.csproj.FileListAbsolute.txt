@@ -12,3 +12,17 @@ C:\Work3\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.csproj.CoreCompileIn
 C:\Work3\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.csproj.CopyComplete
 C:\Work3\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.dll
 C:\Work3\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\SnailFis.Model.dll.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\SnailFis.Model.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\SnailFis.Model.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\BouncyCastle.Crypto.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\Google.Protobuf.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\MySql.Data.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\Renci.SshNet.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\Google.Protobuf.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Release\Renci.SshNet.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.csprojAssemblyReference.cache
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.csproj.CoreCompileInputs.cache
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.csproj.CopyComplete
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Release\SnailFis.Model.pdb

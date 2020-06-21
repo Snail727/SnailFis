@@ -1,23 +1,11 @@
 import Vue from 'vue'
 import axios from 'axios'
-import VueAxios from 'vue-axios'
-import {Message} from 'element-ui'
+import vueAxios from 'vue-axios'
 import qs from "qs";
-import router from '@/router'
- 
-Vue.use(VueAxios, axios)
-//消息提示
-const tip = (errorStr)=>{
-    Message.error({message: errorStr});
-}
+import operateToken from "./OperateToken.js";
+const {tip,toLogin,refresh} =operateToken;
+Vue.use(vueAxios, axios)
 
-/** 
- * 跳转登录页
- * 携带当前页面路由，以期在登录页面完成登录后返回当前页面
- */
-const toLogin = () => {
-  router.push('/Login');
-}
 // 请求拦截器
 axios.interceptors.request.use(
     config => {
@@ -51,112 +39,30 @@ axios.interceptors.response.use(
     },
     // 请求失败
     error => {
-        if (error && error.response) {
-            switch (error.response.status) {
-                case 400: tip('请求错误(400)'); break;
-                case 401: tip('未授权，请重新登录(401)'); 
-                setTimeout(() => {
-                    toLogin();
-                }, 1000);
-                break;
-                case 403: tip('未知错误(403)'); break;
-                case 404: tip('请求出错(404)'); break;
-                case 408: tip('请求超时(408)'); break;
-                case 500: tip('服务器错误(500)'); break;
-                case 501: tip('服务未实现(501)'); break;
-                case 502: tip('网络错误(502)'); break;
-                case 503: tip('服务不可用(503)'); break;
-                case 504: tip('网络超时(504)'); break;
-                case 505: tip('HTTP版本不受支持(505)'); break;
-                default: tip('连接出错'); break;
-            }
-        }
+      if (error && error.response) {
+          switch (error.response.status) {
+              case 401: tip('未授权，请重新登录(401)'); 
+              setTimeout(() => {
+                  toLogin();
+              }, 1000);
+              break;
+              case 404: tip('页面走丢了(404)'); break;
+              default: tip('连接出错'); break;
+          }
+      }
       return Promise.resolve(error);
     }
 )
 
-/*
-*刷新token
-*/
-const refresh = () =>{
-  var refreshtoken = JSON.parse(localStorage.getItem('token')).Refreshtoken;
-  var url = 'http://localhost:63834/snailFis_api/SysUser/RefreshToken';
-  let _qsData = JSON.stringify({RefreshToken: refreshtoken});
-  axios.post(url, _qsData, {
-    headers: {
-      "Content-Type": "application/json; charset=utf-8"
-    }
-  }).then((result) => {
-    if(result.Success){
-      localStorage.setItem('token', JSON.stringify(res.Data));
-    }
-    else{
-      setTimeout(() => {
-          toLogin();
-      }, 1000);
-    }
-  }).catch(() => {
-    setTimeout(() => {
-        toLogin();
-    }, 1000);
-  });
-}
-
 export default {
-    $get(url, data, completedFunc) {
-      let http = axios.get(url, { params: data });
-      if (completedFunc) {
-        http.then(completedFunc);
-      } else {
-        return http;
-      }
-    },
-    $postJson(url, data, completedFunc) {
-      let _qsData = JSON.stringify(data);
-      let http = axios.post(url, _qsData, {
-        headers: {
-          "Content-Type": "application/json; charset=utf-8"
-        }
-      });
-      if (completedFunc) {
-        http.then(completedFunc);
-      } else {
-        return http;
-      }
+    $get(url, data) {
+      return axios.get(url, { params: data });
     },
     $post(url, data, completedFunc) {
       let _qsData = qs.stringify(data, {
         arrayFormat: "indices"
       });
       let http = axios.post(url, _qsData);
-      if (completedFunc) {
-        http.then(completedFunc);
-      } else {
-        return http;
-      }
-    },
-    $postFile(url, form) {
-      let config = {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      };
-      let http = axios.post(url, form, config);
-      return http;
-    },
-    $getFile(url, form) {
-      let config = {
-        headers: {
-          "content-disposition": "attachment; filename=total.xls",
-          "content-type": "application/x-download;charset=utf-8"
-        }
-      };
-      let _qsData = qs.stringify(form, {
-        arrayFormat: "indices"
-      });
-      let http = axios.post(url, _qsData, {
-        responseType: "blob",
-      });
       return http;
     }
-  };
+};

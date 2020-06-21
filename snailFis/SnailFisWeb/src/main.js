@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/store.js'
-import storeMapping from './store/storeMapping.js'
+import StoreMapping from './store/storeMapping.js'
 import Directives from './Directives.js'
 import BaseComponent from '@/components'
 import Elementui from 'element-ui'
@@ -14,7 +14,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(Elementui)
 PrototypePack.initMixins(Vue);
-storeMapping.initMixins(Vue);
+StoreMapping.initMixins(Vue);
 Directives.initMixins(Vue);
 Vue.config.productionTip = false //消息提示的环境配置，设置为开发环境或生产环境
 /* eslint-disable no-new */
