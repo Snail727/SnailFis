@@ -33,7 +33,7 @@ namespace SnailFis
             );
 
             config.Filters.Add(new ApiResultAttribute());
-            //config.Filters.Add(new ApiExceptionResultAttribute());
+            config.Filters.Add(new ApiExceptionResultAttribute());
             //移除xml返回格式数据
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
         }
@@ -79,7 +79,7 @@ namespace SnailFis
             public override void OnException(HttpActionExecutedContext actionExecutedContext)
             {
                 base.OnException(actionExecutedContext);
-
+                LogHelper.WriteLog("WebApiConfig", actionExecutedContext.Exception);
                 //if (actionExecutedContext.Exception is TokenException)
                 //{
                 //    var tokenResult = new ApiResultModel()
@@ -96,20 +96,20 @@ namespace SnailFis
                 //    return;
                 //}
 
-                ApiResultModel result = new ApiResultModel
-                {
-                    StatusCode = actionExecutedContext.ActionContext.Response?.StatusCode ?? HttpStatusCode.InternalServerError,
+                //ApiResultModel result = new ApiResultModel
+                //{
+                //    StatusCode = actionExecutedContext.ActionContext.Response?.StatusCode ?? HttpStatusCode.InternalServerError,
 
-                    Data = actionExecutedContext.Exception.Data,
-                    Success = actionExecutedContext.ActionContext.Response?.IsSuccessStatusCode ?? false,
-                    Message = actionExecutedContext.Exception?.Message
-                };
+                //    Data = actionExecutedContext.Exception.Data,
+                //    Success = actionExecutedContext.ActionContext.Response?.IsSuccessStatusCode ?? false,
+                //    Message = actionExecutedContext.Exception?.Message
+                //};
 
-                HttpResponseMessage httpResponseMessage = new HttpResponseMessage
-                {
-                    Content = new StringContent(JsonConvert.SerializeObject(result), Encoding.GetEncoding("UTF-8"), "application/json")
-                };
-                actionExecutedContext.Response = httpResponseMessage;
+                //HttpResponseMessage httpResponseMessage = new HttpResponseMessage
+                //{
+                //    Content = new StringContent(JsonConvert.SerializeObject(result), Encoding.GetEncoding("UTF-8"), "application/json")
+                //};
+                //actionExecutedContext.Response = httpResponseMessage;
             }
         }
 
