@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SnailFis.Model.SysData
+namespace SnailFis.Model.BusinessModels.SysData
 {
     /// <summary>
     /// 系统用户逻辑类

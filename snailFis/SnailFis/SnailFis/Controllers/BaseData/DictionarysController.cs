@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using SnailFis.Business.BaseData;
 using SnailFis.Model;
-using SnailFis.Model.BaseData;
+using SnailFis.Model.BusinessModels.BaseData;
 using SnailFis.Models.BaseData;
 
 namespace SnailFis.Controllers.BaseData

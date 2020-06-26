@@ -1,15 +1,15 @@
-﻿using SnailFis.Model.BusinessModels.BaseData;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SnailFis.Models.BaseData
+namespace SnailFis.Model.BusinessModels.BaseData
 {
     /// <summary>
-    /// 字典信息编辑类
+    /// 单位信息逻辑类
     /// </summary>
-    public class DicEditModel
+    public class UnitValueModel
     {
         /// <summary>
         /// 蜗居id
@@ -17,14 +17,19 @@ namespace SnailFis.Models.BaseData
         public int SfId { get; set; }
 
         /// <summary>
-        /// 字典id
+        /// 单位类别id
         /// </summary>
-        public int DicId { get; set; }
+        public int UnitTypeId { get; set; }
 
         /// <summary>
-        /// 字典名称
+        /// 单位id
         /// </summary>
-        public string DicName { get; set; }
+        public int UnitId { get; set; }
+
+        /// <summary>
+        /// 单位名称
+        /// </summary>
+        public string UnitName { get; set; }
 
         /// <summary>
         /// 创建人
@@ -45,19 +50,5 @@ namespace SnailFis.Models.BaseData
         /// 修改时间
         /// </summary>
         public DateTime ModifiedDate { get; set; }
-
-        public DicModel ToDicModel()
-        {
-            return new DicModel()
-            {
-                SfId = this.SfId,
-                DicId = this.DicId,
-                DicName = this.DicName,
-                CreatedBy = this.CreatedBy,
-                CreatedDate = this.CreatedDate,
-                ModifiedBy = this.ModifiedBy,
-                ModifiedDate = this.ModifiedDate
-            };
-        }
     }
 }

@@ -1,63 +1,57 @@
-﻿using SnailFis.Model.BusinessModels.BaseData;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
+using static SnailFis.Model.DBColumnAtrributes;
 
-namespace SnailFis.Models.BaseData
+namespace SnailFis.Data.Models.BaseData
 {
     /// <summary>
-    /// 字典信息编辑类
+    /// 运动类型信息基类
     /// </summary>
-    public class DicEditModel
+    public class SportTypeDbModel
     {
         /// <summary>
         /// 蜗居id
         /// </summary>
+        [DBColumn("SfId")]
         public int SfId { get; set; }
 
         /// <summary>
-        /// 字典id
+        /// 运动类型id
         /// </summary>
-        public int DicId { get; set; }
+        [DBColumn("SportId")]
+        public int SportId { get; set; }
 
         /// <summary>
-        /// 字典名称
+        /// 运动类型名称
         /// </summary>
-        public string DicName { get; set; }
+        [DBColumn("SportName")]
+        public string SportName { get; set; }
 
         /// <summary>
         /// 创建人
         /// </summary>
+        [DBColumn("CreatedBy")]
         public int CreatedBy { get; set; }
 
         /// <summary>
         /// 创建时间
         /// </summary>
+        [DBColumn("CreatedDate")]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// 修改人
         /// </summary>
+        [DBColumn("ModifiedBy")]
         public int ModifiedBy { get; set; }
 
         /// <summary>
         /// 修改时间
         /// </summary>
+        [DBColumn("ModifiedDate")]
         public DateTime ModifiedDate { get; set; }
-
-        public DicModel ToDicModel()
-        {
-            return new DicModel()
-            {
-                SfId = this.SfId,
-                DicId = this.DicId,
-                DicName = this.DicName,
-                CreatedBy = this.CreatedBy,
-                CreatedDate = this.CreatedDate,
-                ModifiedBy = this.ModifiedBy,
-                ModifiedDate = this.ModifiedDate
-            };
-        }
     }
 }

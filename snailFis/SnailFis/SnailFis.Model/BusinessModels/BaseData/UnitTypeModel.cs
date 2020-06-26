@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SnailFis.Model.BaseData
+namespace SnailFis.Model.BusinessModels.BaseData
 {
     /// <summary>
-    /// 字典信息逻辑类
+    /// 单位类别信息逻辑类
     /// </summary>
-    public class DicModel
+    public class UnitTypeModel
     {
-        public DicModel()
+        public UnitTypeModel()
         {
-            Items = new List<DiceModel>();
+            Items = new List<UnitValueModel>();
         }
         /// <summary>
         /// 蜗居id
@@ -21,14 +21,14 @@ namespace SnailFis.Model.BaseData
         public int SfId { get; set; }
 
         /// <summary>
-        /// 字典id
+        /// 单位类别id
         /// </summary>
-        public int DicId { get; set; }
+        public int UnitTypeId { get; set; }
 
         /// <summary>
-        /// 字典名称
+        /// 单位类别名称
         /// </summary>
-        public string DicName { get; set; }
+        public string UnitTypeName { get; set; }
 
         /// <summary>
         /// 创建人
@@ -51,8 +51,8 @@ namespace SnailFis.Model.BaseData
         public DateTime ModifiedDate { get; set; }
 
         /// <summary>
-        /// 字典子表集合
+        /// 单位子表集合
         /// </summary>
-        public List<DiceModel> Items { get; set; }
+        public List<UnitValueModel> Items { get; set; }
     }
 }

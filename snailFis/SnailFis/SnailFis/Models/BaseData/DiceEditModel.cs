@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using SnailFis.Model.BaseData;
+using SnailFis.Model.BusinessModels.BaseData;
 
 namespace SnailFis.Models.BaseData
 {

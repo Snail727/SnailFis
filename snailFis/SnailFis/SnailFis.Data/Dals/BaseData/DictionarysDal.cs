@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SnailFis.Data.Dals.Common;
 using SnailFis.Data.Models.BaseData;
 using SnailFis.Data.Utilities;
-using SnailFis.Model.BaseData;
+using SnailFis.Model.BusinessModels.BaseData;
 
 namespace SnailFis.Data.Dals.BaseData
 {

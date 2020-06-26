@@ -1,5 +1,5 @@
 ﻿using SnailFis.Common;
-using SnailFis.Model.SysData;
+using SnailFis.Model.BusinessModels.SysData;
 using System;
 using System.Collections.Generic;
 using System.Linq;

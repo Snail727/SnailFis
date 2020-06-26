@@ -35,7 +35,6 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\MySql.Data.dll
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\Renci.SshNet.dll
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\Google.Protobuf.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\bin\Debug\Renci.SshNet.xml
-F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csprojAssemblyReference.cache
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csproj.CoreCompileInputs.cache
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csproj.CopyComplete
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.dll

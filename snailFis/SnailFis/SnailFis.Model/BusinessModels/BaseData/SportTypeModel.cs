@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SnailFis.Model.BaseData
+namespace SnailFis.Model.BusinessModels.BaseData
 {
     /// <summary>
-    /// 字典子表信息逻辑类
+    /// 运功项目逻辑类
     /// </summary>
-    public class DiceModel
+    public class SportTypeModel
     {
         /// <summary>
         /// 蜗居id
@@ -17,19 +17,14 @@ namespace SnailFis.Model.BaseData
         public int SfId { get; set; }
 
         /// <summary>
-        /// 字典id
+        /// 运动类型id
         /// </summary>
-        public int DicId { get; set; }
+        public int SportId { get; set; }
 
         /// <summary>
-        /// 字典内容id
-        /// </summary>e
-        public int DiceId { get; set; }
-
-        /// <summary>
-        /// 字典内容名称
+        /// 运动类型名称
         /// </summary>
-        public string DiceName { get; set; }
+        public string SportName { get; set; }
 
         /// <summary>
         /// 创建人

@@ -1,15 +1,15 @@
-﻿using SnailFis.Model.BusinessModels.BaseData;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SnailFis.Models.BaseData
+namespace SnailFis.Model.BusinessModels.BaseData
 {
     /// <summary>
-    /// 字典信息编辑类
+    /// 字典子表信息逻辑类
     /// </summary>
-    public class DicEditModel
+    public class DiceModel
     {
         /// <summary>
         /// 蜗居id
@@ -22,9 +22,14 @@ namespace SnailFis.Models.BaseData
         public int DicId { get; set; }
 
         /// <summary>
-        /// 字典名称
+        /// 字典内容id
+        /// </summary>e
+        public int DiceId { get; set; }
+
+        /// <summary>
+        /// 字典内容名称
         /// </summary>
-        public string DicName { get; set; }
+        public string DiceName { get; set; }
 
         /// <summary>
         /// 创建人
@@ -45,19 +50,5 @@ namespace SnailFis.Models.BaseData
         /// 修改时间
         /// </summary>
         public DateTime ModifiedDate { get; set; }
-
-        public DicModel ToDicModel()
-        {
-            return new DicModel()
-            {
-                SfId = this.SfId,
-                DicId = this.DicId,
-                DicName = this.DicName,
-                CreatedBy = this.CreatedBy,
-                CreatedDate = this.CreatedDate,
-                ModifiedBy = this.ModifiedBy,
-                ModifiedDate = this.ModifiedDate
-            };
-        }
     }
 }

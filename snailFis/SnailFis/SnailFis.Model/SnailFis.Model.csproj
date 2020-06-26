@@ -61,17 +61,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseData\DiceModel.cs" />
-    <Compile Include="BaseData\DicModel.cs" />
+    <Compile Include="BusinessModels\BaseData\UnitValueModel.cs" />
+    <Compile Include="BusinessModels\BaseData\SportValueModel.cs" />
+    <Compile Include="BusinessModels\BaseData\DiceModel.cs" />
+    <Compile Include="BusinessModels\BaseData\UnitTypeModel.cs" />
+    <Compile Include="BusinessModels\BaseData\SportTypeModel.cs" />
+    <Compile Include="BusinessModels\BaseData\DicModel.cs" />
     <Compile Include="DBColumnAttribute.cs" />
     <Compile Include="MessageModel.cs" />
     <Compile Include="PagedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SysData\SysUserModel.cs" />
+    <Compile Include="BusinessModels\SysData\SysUserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\BaseData\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

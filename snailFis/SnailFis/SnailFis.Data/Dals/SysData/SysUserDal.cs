@@ -1,7 +1,7 @@
 ﻿using SnailFis.Data.Dals.Common;
 using SnailFis.Data.Models.SysData;
 using SnailFis.Data.Utilities;
-using SnailFis.Model.SysData;
+using SnailFis.Model.BusinessModels.SysData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
