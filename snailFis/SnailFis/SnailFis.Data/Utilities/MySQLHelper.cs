@@ -93,9 +93,6 @@ namespace SnailFis.Data.Utilities
         //数据库连接字符串
         public static string Conn = System.Configuration.ConfigurationManager.ConnectionStrings["SnailFis"].ConnectionString;
 
-        // 用于缓存参数的HASH表
-        private static Hashtable parmCache = Hashtable.Synchronized(new Hashtable());
-
         /// <summary>
         ///  给定连接的数据库用假设参数执行一个sql命令（不返回数据集）
         /// </summary>
@@ -281,36 +278,6 @@ namespace SnailFis.Data.Utilities
             object val = cmd.ExecuteScalar();
             cmd.Parameters.Clear();
             return val;
-        }
-
-        /// <summary>
-        /// 将参数集合添加到缓存
-        /// </summary>
-        /// <param name="cacheKey">添加到缓存的变量</param>
-        /// <param name="commandParameters">一个将要添加到缓存的sql参数集合</param>
-        private static void CacheParameters(string cacheKey, params MySqlParameter[] commandParameters)
-        {
-            parmCache[cacheKey] = commandParameters;
-        }
-
-        /// <summary>
-        /// 找回缓存参数集合
-        /// </summary>
-        /// <param name="cacheKey">用于找回参数的关键字</param>
-        /// <returns>缓存的参数集合</returns>
-        private static MySqlParameter[] GetCachedParameters(string cacheKey)
-        {
-            MySqlParameter[] cachedParms = (MySqlParameter[])parmCache[cacheKey];
-
-            if (cachedParms == null)
-                return null;
-
-            MySqlParameter[] clonedParms = new MySqlParameter[cachedParms.Length];
-
-            for (int i = 0, j = cachedParms.Length; i < j; i++)
-                clonedParms[i] = (MySqlParameter)((ICloneable)cachedParms[i]).Clone();
-
-            return clonedParms;
         }
 
         /// <summary>
