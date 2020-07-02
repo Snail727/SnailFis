@@ -10,14 +10,19 @@ Vue.use(vueAxios, axios)
 axios.interceptors.request.use(
     config => {
         var timestamp = Date.parse(new Date())/1000;
-        var exp = JSON.parse(localStorage.getItem('token')).Exp;
+
+        var tokenDataStr =localStorage.getItem('token');
+        var tokenData={Exp:0,Accesstoken:""};
+        if(tokenDataStr!=null){tokenData=JSON.parse(tokenDataStr);}
+        
+        var exp = tokenData.Exp;
         var lastDate = exp-timestamp;
         //token过期时间三十分钟以内获取刷新token
         if(lastDate>0 & lastDate<1800 & config.url.indexOf("SysUser/RefreshToken") == -1){
           refresh();
         }
         // 在发送请求之前做些什么(在这里加上token)
-        var token = JSON.parse(localStorage.getItem('token')).Accesstoken;
+        var token = tokenData.Accesstoken;
         token && (config.headers.Authorization = token);  
         return config;
     },

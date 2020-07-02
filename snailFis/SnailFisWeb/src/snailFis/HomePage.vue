@@ -1,31 +1,26 @@
 <template>
-  <div>
-    首页
-    {{isSuccess?"请求成功":"请求失败"}}
-    <button @click="init">查询</button>
-    <button @click="exit">退出</button>
+  <div style="width:100%;height:100%;">
+    <div class="menu">
+        <router-link :to="{path:'/'}">首页</router-link>
+        <router-link :to="{path:'/Sport'}">运动</router-link>
+    </div>
+    <div class="main">
+        <div class="head"><button @click="exit">退出</button></div>
+        <div class="body"><keep-alive><router-view></router-view></keep-alive></div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
     created(){
-        var self =this;
-        self.init();
     },
     components:{},
     data(){
         return{
-            isSuccess:false
         }
     },
     methods:{
-        init(){
-            var self =this;
-            self.$allAxios.Dictionarys.GetDicList().then((res)=>{
-                self.isSuccess=res.Success;
-            });
-        },
         exit(){
             var self =this;
             localStorage.setItem('token', JSON.stringify({}));//清除token
@@ -34,3 +29,22 @@ export default {
     }
 }
 </script>
+
+<style>
+.menu{
+    width: 100px;
+    height: 100%;
+    float: left;
+}
+.main{
+    min-width: 500px;
+    height: 100%;
+    overflow: hidden;
+}
+.head{
+    height: 30px;
+}
+.body{
+    height: calc(100% - 30px);
+}
+</style>

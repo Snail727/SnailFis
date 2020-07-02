@@ -646,3 +646,6 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Debug\SnailFis.pdb
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.dll
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.xml
