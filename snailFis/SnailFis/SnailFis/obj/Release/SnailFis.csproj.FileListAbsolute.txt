@@ -427,3 +427,9 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Release\SnailFis.csproj.CoreCom
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Release\SnailFis.csproj.CopyComplete
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Release\SnailFis.dll
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Release\SnailFis.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Debug.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Release.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\log4net.xml

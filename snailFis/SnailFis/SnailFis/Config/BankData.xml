@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<banks>
+	<bank key="独一">
+		<name>中国建设银行</name>
+		<code>1001</code>
+	</bank>
+	<bank key="无二">
+		<name>中国工商银行</name>
+		<code>1002</code>
+	</bank>
+</banks>

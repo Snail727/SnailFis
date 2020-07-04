@@ -13,7 +13,7 @@ axios.interceptors.request.use(
 
         var tokenDataStr =localStorage.getItem('token');
         var tokenData={Exp:0,Accesstoken:""};
-        if(tokenDataStr!=null){tokenData=JSON.parse(tokenDataStr);}
+        if(tokenDataStr!=null || tokenDataStr!="{}"){tokenData=JSON.parse(tokenDataStr);}
         
         var exp = tokenData.Exp;
         var lastDate = exp-timestamp;

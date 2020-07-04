@@ -649,3 +649,7 @@ C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Debug\SnailFis.csproj.CoreCompi
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Debug\SnailFis.csproj.CopyComplete
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Debug\SnailFis.dll
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\obj\Debug\SnailFis.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Debug.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Release.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Config\BankData.xml

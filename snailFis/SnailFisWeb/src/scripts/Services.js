@@ -10,6 +10,9 @@ const snailFisUrls = {
         UpdateUser:"/SysUser/UpdateUser",
         UserLogin:"/SysUser/UserLogin",
         RefreshToken:"/SysUser/RefreshToken",
+    },
+    Test:{
+        GetBankList:"get /Test/GetBankList",
     }
 };
 const { $get, $post } = AxiosPack;

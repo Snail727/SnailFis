@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseData\Dictionarys.cs" />
+    <Compile Include="BaseData\XmlData.cs" />
     <Compile Include="Common\BaseBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SysData\SysUser.cs" />

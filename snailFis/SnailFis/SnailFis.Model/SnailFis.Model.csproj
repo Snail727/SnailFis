@@ -67,6 +67,7 @@
     <Compile Include="BusinessModels\BaseData\UnitTypeModel.cs" />
     <Compile Include="BusinessModels\BaseData\SportTypeModel.cs" />
     <Compile Include="BusinessModels\BaseData\DicModel.cs" />
+    <Compile Include="BusinessModels\XmlData\BankModel.cs" />
     <Compile Include="DBColumnAttribute.cs" />
     <Compile Include="MessageModel.cs" />
     <Compile Include="PagedList.cs" />

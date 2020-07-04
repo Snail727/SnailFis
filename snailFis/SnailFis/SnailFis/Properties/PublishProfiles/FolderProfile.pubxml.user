@@ -84,6 +84,12 @@
     <File Include="bin/JWT.pdb">
       <publishTime>06/17/2020 22:19:03</publishTime>
     </File>
+    <File Include="bin/log4net.config">
+      <publishTime>06/23/2020 23:15:24</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>03/08/2017 19:26:22</publishTime>
+    </File>
     <File Include="bin/Microsoft.AspNetCore.Antiforgery.dll">
       <publishTime>05/21/2020 10:47:54</publishTime>
     </File>
@@ -373,40 +379,40 @@
       <publishTime>05/21/2020 10:47:54</publishTime>
     </File>
     <File Include="bin/SnailFis.Business.dll">
-      <publishTime>06/21/2020 17:01:24</publishTime>
+      <publishTime>07/04/2020 18:40:43</publishTime>
     </File>
     <File Include="bin/SnailFis.Business.pdb">
-      <publishTime>06/21/2020 17:01:24</publishTime>
+      <publishTime>07/04/2020 18:40:43</publishTime>
     </File>
     <File Include="bin/SnailFis.Common.dll">
-      <publishTime>06/21/2020 17:01:23</publishTime>
+      <publishTime>07/04/2020 18:40:43</publishTime>
     </File>
     <File Include="bin/SnailFis.Common.pdb">
-      <publishTime>06/21/2020 17:01:23</publishTime>
+      <publishTime>07/04/2020 18:40:43</publishTime>
     </File>
     <File Include="bin/SnailFis.Data.dll">
-      <publishTime>06/21/2020 17:01:24</publishTime>
+      <publishTime>07/04/2020 18:40:43</publishTime>
     </File>
     <File Include="bin/SnailFis.Data.dll.config">
       <publishTime>05/21/2020 10:47:52</publishTime>
     </File>
     <File Include="bin/SnailFis.Data.pdb">
-      <publishTime>06/21/2020 17:01:24</publishTime>
+      <publishTime>07/04/2020 18:40:43</publishTime>
     </File>
     <File Include="bin/SnailFis.dll">
-      <publishTime>06/21/2020 17:01:25</publishTime>
+      <publishTime>07/04/2020 18:40:44</publishTime>
     </File>
     <File Include="bin/SnailFis.Model.dll">
-      <publishTime>06/21/2020 17:01:23</publishTime>
+      <publishTime>07/04/2020 18:40:42</publishTime>
     </File>
     <File Include="bin/SnailFis.Model.dll.config">
       <publishTime>05/21/2020 10:47:52</publishTime>
     </File>
     <File Include="bin/SnailFis.Model.pdb">
-      <publishTime>06/21/2020 17:01:23</publishTime>
+      <publishTime>07/04/2020 18:40:42</publishTime>
     </File>
     <File Include="bin/SnailFis.pdb">
-      <publishTime>06/21/2020 17:01:25</publishTime>
+      <publishTime>07/04/2020 18:40:44</publishTime>
     </File>
     <File Include="bin/System.Buffers.dll">
       <publishTime>05/21/2020 10:47:55</publishTime>
@@ -479,6 +485,15 @@
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
       <publishTime>05/21/2020 10:47:54</publishTime>
+    </File>
+    <File Include="bin/Web.config">
+      <publishTime>07/04/2020 18:40:44</publishTime>
+    </File>
+    <File Include="bin/Web.Debug.config">
+      <publishTime>05/21/2020 10:47:52</publishTime>
+    </File>
+    <File Include="bin/Web.Release.config">
+      <publishTime>05/21/2020 10:47:52</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>05/21/2020 10:47:55</publishTime>
@@ -561,6 +576,9 @@
     <File Include="Global.asax">
       <publishTime>05/21/2020 10:47:52</publishTime>
     </File>
+    <File Include="log4net.config">
+      <publishTime>06/23/2020 23:15:24</publishTime>
+    </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>05/21/2020 10:47:52</publishTime>
     </File>
@@ -604,7 +622,7 @@
       <publishTime>05/21/2020 10:47:52</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/21/2020 17:01:25</publishTime>
+      <publishTime>07/04/2020 18:40:44</publishTime>
     </File>
   </ItemGroup>
 </Project>
