@@ -653,3 +653,7 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.config
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Debug.config
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Release.config
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Config\BankData.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Config\BankData.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Debug.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Release.config
