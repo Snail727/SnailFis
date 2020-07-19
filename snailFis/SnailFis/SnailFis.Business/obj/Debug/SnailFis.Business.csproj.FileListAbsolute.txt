@@ -46,3 +46,8 @@ C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Busines
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Business.csproj.CopyComplete
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Business.dll
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\obj\Debug\SnailFis.Business.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Business.dll.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\EntityFramework.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\MySql.Data.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\EntityFramework.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\zh-Hans\EntityFramework.resources.dll

@@ -36,3 +36,11 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\obj\Debug\SnailFis.Data.csproj
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\obj\Debug\SnailFis.Data.csproj.CopyComplete
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\obj\Debug\SnailFis.Data.dll
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\obj\Debug\SnailFis.Data.pdb
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\bin\Debug\EntityFramework.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\bin\Debug\MySql.Data.Entity.EF6.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\bin\Debug\EntityFramework.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\bin\Debug\MySql.Data.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\bin\Debug\MySql.Data.Entity.EF6.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Data\bin\Debug\zh-Hans\EntityFramework.resources.dll

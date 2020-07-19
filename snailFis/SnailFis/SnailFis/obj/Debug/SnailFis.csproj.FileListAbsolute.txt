@@ -657,3 +657,12 @@ C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Config\BankData.xml
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.config
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Debug.config
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Web.Release.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.SqlServer.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\MySql.Data.Entity.EF6.dll
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\SnailFis.Business.dll.config
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.SqlServer.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\MySql.Data.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\MySql.Data.Entity.EF6.xml
+F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\zh-Hans\EntityFramework.resources.dll

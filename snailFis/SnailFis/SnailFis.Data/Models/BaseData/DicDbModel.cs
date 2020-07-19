@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +12,13 @@ namespace SnailFis.Data.Models.BaseData
     /// <summary>
     /// 字典信息基类
     /// </summary>
+    [Table("bt_dic")]
     public class DicDbModel
     {
         /// <summary>
         /// 蜗居id
         /// </summary>
+        [Key]
         [DBColumn("SfId")]
         public int SfId { get; set; }
 
