@@ -1,4 +1,5 @@
 ﻿using SnailFis.Data.Dals.Common;
+using SnailFis.Data.EfModel;
 using SnailFis.Data.Models.SysData;
 using SnailFis.Data.Utilities;
 using SnailFis.Model.BusinessModels.SysData;
@@ -25,8 +26,8 @@ namespace SnailFis.Data.Dals.SysData
         /// <returns></returns>
         public SysUserModel GetSysUserByUserSn(int userSn)
         {
-            var sql = $"select * from sys_user where UserSn = {userSn}";
-            var tempModel = MySQlHelper.ExecuteListObject<SysUserDbModel>(sql, null).FirstOrDefault();
+            var db = new SnailFisDbContext();
+            var tempModel =db.UserList.FirstOrDefault(v => v.UserSn == userSn);
             if (tempModel == null) { return null; };
             var model = ToSysUserModel(tempModel);
             return model;
@@ -39,8 +40,8 @@ namespace SnailFis.Data.Dals.SysData
         /// <returns></returns>
         public List<SysUserModel> GetUserListByPhone(string phone)
         {
-            var sql = $"select * from sys_user where Phone = {phone}";
-            var tempList = MySQlHelper.ExecuteListObject<SysUserDbModel>(sql, null);
+            var db = new SnailFisDbContext();
+            var tempList = db.UserList.Where(v=>v.Phone==phone);
             if (tempList == null) { return null; };
             var list = tempList.Select(v => ToSysUserModel(v)).ToList();
             return list;
@@ -84,8 +85,6 @@ namespace SnailFis.Data.Dals.SysData
                 PassWord = model.PassWord,
                 Phone = model.Phone,
                 Note = model.Note,
-                CreatedDate = model.CreatedDate,
-                ModifiedDate = model.ModifiedDate
             };
         }
         #endregion
@@ -99,10 +98,14 @@ namespace SnailFis.Data.Dals.SysData
         {
             var nextUserSn = new BaseOptionsDal(0, 0).GetNextUserSn();
             var tempModel = ToSysUserDbModel(model);
-            var sql = $@"insert into sys_user(UserSn,UserName,PassWord,Phone,Note,CreatedDate,ModifiedDate) 
-                        values({nextUserSn},?UserName,?PassWord,?Phone,?Note,now(),now())";
-            MySQlHelper.ExecuteScalar(sql, tempModel);
-            return Convert.ToInt32(nextUserSn);
+            using (var db = new SnailFisDbContext()) 
+            {
+                tempModel.CreatedDate = tempModel.ModifiedDate = DateTime.Now;
+                tempModel.UserSn = Convert.ToInt32(nextUserSn);
+                db.UserList.Add(tempModel);
+                db.SaveChanges();
+            }
+            return tempModel.UserSn;
         }
 
         /// <summary>
@@ -112,9 +115,18 @@ namespace SnailFis.Data.Dals.SysData
         /// <returns></returns>
         public void UpdateUser(SysUserModel model)
         {
-            var tempModel = ToSysUserDbModel(model);
-            var sql = $@"update sys_user set UserName=?UserName,PassWord=?PassWord,Phone=?Phone,Note=?Note,ModifiedDate = now() where UserSn={model.UserSn};";
-            MySQlHelper.ExecuteScalar(sql, tempModel);
+            using (var db = new SnailFisDbContext())
+            {
+                var tempUpdateModel = db.UserList.FirstOrDefault(v => v.UserSn == model.UserSn);
+                if (tempUpdateModel == null) { throw new Exception("未找到该用户"); };
+                tempUpdateModel.UserSn = model.UserSn;
+                tempUpdateModel.UserName = model.UserName;
+                tempUpdateModel.PassWord = model.PassWord;
+                tempUpdateModel.Phone = model.Phone;
+                tempUpdateModel.Note = model.Note;
+                tempUpdateModel.ModifiedDate = DateTime.Now;
+                db.SaveChanges();
+            }
         }
     }
 }
