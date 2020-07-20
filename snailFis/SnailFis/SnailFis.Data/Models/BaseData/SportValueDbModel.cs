@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,23 +12,33 @@ namespace SnailFis.Data.Models.BaseData
     /// <summary>
     /// 运功详情信息基类
     /// </summary>
+    [Table("bt_sport_value")]
     public class SportValueDbModel
     {
         /// <summary>
         /// 蜗居id
         /// </summary>
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DBColumn("SfId")]
         public int SfId { get; set; }
 
         /// <summary>
         /// 运动类型id
         /// </summary>
+        [Key]
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DBColumn("SportId")]
         public int SportId { get; set; }
 
         /// <summary>
         /// 运动详情id
         /// </summary>
+        [Key]
+        [Column(Order = 2)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DBColumn("SporteId")]
         public int SporteId { get; set; }
 
@@ -57,6 +69,7 @@ namespace SnailFis.Data.Models.BaseData
         /// <summary>
         /// 备注
         /// </summary>
+        [StringLength(256)]
         [DBColumn("Note")]
         public string Note { get; set; }
 

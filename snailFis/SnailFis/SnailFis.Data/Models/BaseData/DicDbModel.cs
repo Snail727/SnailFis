@@ -19,12 +19,17 @@ namespace SnailFis.Data.Models.BaseData
         /// 蜗居id
         /// </summary>
         [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DBColumn("SfId")]
         public int SfId { get; set; }
 
         /// <summary>
         /// 字典id
         /// </summary>
+        [Key]
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DBColumn("DicId")]
         public int DicId { get; set; }
 
@@ -32,6 +37,7 @@ namespace SnailFis.Data.Models.BaseData
         /// 字典名称
         /// </summary>
         [DBColumn("DicName")]
+        [StringLength(50)]
         public string DicName { get; set; }
 
         /// <summary>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,24 +12,28 @@ namespace SnailFis.Data.Models.SysData
     /// <summary>
     /// 系统蜗居基类
     /// </summary>
+    [Table("sys_sf")]
     public class SysSfDbModel
     {
-
         /// <summary>
         /// 蜗居id
         /// </summary>
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DBColumn("SfId")]
         public int SfId { get; set; }
 
         /// <summary>
         /// 蜗居名称
         /// </summary>
+        [StringLength(64)]
         [DBColumn("SfName")]
         public string SfName { get; set; }
 
         // <summary>
         /// 备注
         /// </summary>
+        [StringLength(256)]
         [DBColumn("Note")]
         public string Note { get; set; }
 
