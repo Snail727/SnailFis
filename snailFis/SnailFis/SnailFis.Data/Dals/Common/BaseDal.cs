@@ -12,16 +12,11 @@ namespace SnailFis.Data.Dals.Common
     public class BaseDal
     {
         /// <summary>
-        /// 蜗居id
-        /// </summary>
-        public int SfId { get; }
-        /// <summary>
         /// 用户编码
         /// </summary>
         public int UserSn { get; }
-        public BaseDal(int sfId, int userSn)
+        public BaseDal(int userSn)
         {
-            SfId = sfId;
             UserSn = userSn;
         }
     }

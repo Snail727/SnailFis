@@ -666,3 +666,12 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.SqlServer.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\MySql.Data.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\MySql.Data.Entity.EF6.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\zh-Hans\EntityFramework.resources.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.SqlServer.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\MySql.Data.Entity.EF6.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\SnailFis.Business.dll.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\EntityFramework.SqlServer.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\MySql.Data.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\MySql.Data.Entity.EF6.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\zh-Hans\EntityFramework.resources.dll

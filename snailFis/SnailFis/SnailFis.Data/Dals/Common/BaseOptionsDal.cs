@@ -10,7 +10,7 @@ namespace SnailFis.Data.Dals.Common
 {
     public class BaseOptionsDal : BaseDal
     {
-        public BaseOptionsDal(int sfId, int userSn) : base(sfId, userSn)
+        public BaseOptionsDal(int userSn) : base(userSn)
         {
         }
 
@@ -23,7 +23,7 @@ namespace SnailFis.Data.Dals.Common
         /// <returns></returns>
         public int GetNextId(string idColumn, string tableName)
         {
-            var sql = $"select max({idColumn}) FROM `{tableName}` where sf_id = {SfId};";
+            var sql = $"select max({idColumn}) FROM `{tableName}` where UserSn = {UserSn};";
             var tempId = MySQlHelper.ExecuteScalar(sql);
             if (int.TryParse(tempId.ToString(), out int id))
             {
@@ -63,7 +63,7 @@ namespace SnailFis.Data.Dals.Common
         public void DeleteData(string tableName, string others, string pk, int[] ids)
         {
             if (ids == null || ids.Count() <= 0 || ids[0] <= 0) { return; }
-            var sql = $"delete from {tableName} where sf_id={SfId} {others} and {pk} in ({string.Join(",", ids)})";
+            var sql = $"delete from {tableName} where UserSn={UserSn} {others} and {pk} in ({string.Join(",", ids)})";
             MySQlHelper.ExecuteScalar(sql);
         }
         #endregion

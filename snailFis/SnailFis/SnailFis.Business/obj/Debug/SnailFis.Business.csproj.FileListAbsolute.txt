@@ -51,3 +51,8 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\EntityFramework.
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\MySql.Data.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\EntityFramework.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\SnailFis.Business.dll.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\EntityFramework.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\MySql.Data.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\EntityFramework.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Business\bin\Debug\zh-Hans\EntityFramework.resources.dll

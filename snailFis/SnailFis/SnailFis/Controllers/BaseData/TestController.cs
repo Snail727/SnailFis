@@ -20,7 +20,7 @@ namespace SnailFis.Controllers.BaseData
         /// <returns></returns>
         public MessageModel GetBankList()
         {
-            var list = new XmlData(SfId, UserSn).GetBankList();
+            var list = new XmlData(UserSn).GetBankList();
             return new MessageModel(true, list);
         }
     }

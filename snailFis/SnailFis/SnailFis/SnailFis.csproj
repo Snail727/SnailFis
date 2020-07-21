@@ -374,16 +374,11 @@
     <Compile Include="Common\TokenHelper.cs" />
     <Compile Include="Common\ValidationAttribute.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
-    <Compile Include="Controllers\BaseData\DictionarysController.cs" />
     <Compile Include="Controllers\BaseData\TestController.cs" />
     <Compile Include="Controllers\SysData\SysUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseData\DiceEditModel.cs" />
-    <Compile Include="Models\BaseData\DiceViewModel.cs" />
-    <Compile Include="Models\BaseData\DicEditModel.cs" />
-    <Compile Include="Models\BaseData\DicViewModel.cs" />
     <Compile Include="Models\SysData\LoginData.cs" />
     <Compile Include="Models\SysData\SysUserEditModel.cs" />
     <Compile Include="Models\SysData\TokenViewModel.cs" />
@@ -453,6 +448,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\BaseData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -16,7 +16,7 @@ export default {
         Search(){
             var self =this;
             console.log(self.$allAxios);
-            self.$allAxios.Dictionarys.GetDicList().then((res)=>{console.log(res)});
+            self.$allAxios.Test.GetBankList().then((res)=>{console.log(res)});
         },
     },
     filters:{

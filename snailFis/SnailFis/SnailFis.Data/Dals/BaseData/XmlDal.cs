@@ -16,40 +16,13 @@ namespace SnailFis.Data.Dals.BaseData
     public class XmlDal : BaseDal
     {
         XmlHelper xmlHelper;
-        public XmlDal(int sfId, int userSn) : base(sfId, userSn)
+        public XmlDal(int userSn) : base(userSn)
         {
             xmlHelper = new XmlHelper();
         }
 
         public List<BankModel> GetBankList() 
         {
-using (var snailFisDbContext = new SnailFisDbContext()) {
-    snailFisDbContext.DicList.Add(new DicDbModel() {SfId=1,DicId=1,DicName="新华字典" });
-    snailFisDbContext.DicList.Add(new DicDbModel() {SfId=2,DicId=2,DicName="新华大字典" });
-    snailFisDbContext.SaveChanges();
-}
-using (var snailFisDbContext = new SnailFisDbContext())
-{
-    var sql = snailFisDbContext.DicList.SqlQuery("select * from [DicList] where [SfId] > 1");
-    snailFisDbContext.DicList.RemoveRange(sql);
-    var delList = snailFisDbContext.DicList.Where(v=>v.SfId>1);
-    snailFisDbContext.DicList.RemoveRange(delList);
-    snailFisDbContext.SaveChanges();
-}
-
-using (var snailFisDbContext = new SnailFisDbContext())
-{
-    var tempModel = snailFisDbContext.DicList.FirstOrDefault(v => v.SfId == 1);//修改需要把对应的数据先拿出来
-                if (tempModel != null) {
-        tempModel.DicName = "新华词典";
-    }
-    var updateList = snailFisDbContext.DicList.Where(v => v.SfId > 1);//当然也可以批量修改
-    updateList.ToList().ForEach(v => {
-        v.DicName = "待定";
-    });
-    snailFisDbContext.SaveChanges();
-}
-
             var list = new List<BankModel>();
             XmlDocument document = xmlHelper.GetXmlDocument(XmlName.BankData);
             XmlElement element = document.DocumentElement;

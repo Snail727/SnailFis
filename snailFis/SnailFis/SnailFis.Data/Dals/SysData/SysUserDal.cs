@@ -16,9 +16,6 @@ namespace SnailFis.Data.Dals.SysData
     /// </summary>
     public class SysUserDal
     {
-        public SysUserDal()
-        { }
-
         /// <summary>
         /// 获取系统用户内容
         /// </summary>
@@ -96,7 +93,7 @@ namespace SnailFis.Data.Dals.SysData
         /// <returns></returns>
         public int AddUser(SysUserModel model)
         {
-            var nextUserSn = new BaseOptionsDal(0, 0).GetNextUserSn();
+            var nextUserSn = new BaseOptionsDal(0).GetNextUserSn();
             var tempModel = ToSysUserDbModel(model);
             using (var db = new SnailFisDbContext()) 
             {

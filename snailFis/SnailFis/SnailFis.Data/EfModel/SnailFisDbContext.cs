@@ -19,10 +19,6 @@
         /// </summary>
         public virtual DbSet<SysUserDbModel> UserList { get; set; }
         /// <summary>
-        /// 蜗居列表
-        /// </summary>
-        public virtual DbSet<SysSfDbModel> SfList { get; set; }
-        /// <summary>
         /// 单位类别列表
         /// </summary>
         public virtual DbSet<UnitTypeDbModel> UnitTypeList { get; set; }

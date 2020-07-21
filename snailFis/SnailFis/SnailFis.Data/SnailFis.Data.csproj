@@ -77,17 +77,13 @@
     <Compile Include="Dals\BaseData\XmlDal.cs" />
     <Compile Include="Dals\Common\BaseDal.cs" />
     <Compile Include="Dals\Common\BaseOptionsDal.cs" />
-    <Compile Include="Dals\BaseData\DictionarysDal.cs" />
     <Compile Include="Dals\SysData\SysSfDal.cs" />
     <Compile Include="Dals\SysData\SysUserDal.cs" />
     <Compile Include="EfModel\SnailFisDbContext.cs" />
     <Compile Include="Models\BaseData\UnitTypeDbModel.cs" />
     <Compile Include="Models\BaseData\SportTypeDbModel.cs" />
-    <Compile Include="Models\BaseData\DicDbModel.cs" />
     <Compile Include="Models\BaseData\UnitValueDbModel.cs" />
     <Compile Include="Models\BaseData\SportValueDbModel.cs" />
-    <Compile Include="Models\BaseData\DiceDbModel.cs" />
-    <Compile Include="Models\SysData\SysSfDbModel.cs" />
     <Compile Include="Models\SysData\SysUserDbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\MySQLHelper.cs" />

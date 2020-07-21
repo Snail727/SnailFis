@@ -15,9 +15,9 @@ namespace SnailFis.Business.BaseData
     public class XmlData : BaseBusiness
     {
         XmlDal _dal;
-        public XmlData(int sfId, int userSn) : base(sfId, userSn)
+        public XmlData(int userSn) : base(userSn)
         {
-            _dal = new XmlDal(SfId, UserSn);
+            _dal = new XmlDal(UserSn);
         }
 
         public List<BankModel> GetBankList()

@@ -16,15 +16,6 @@ namespace SnailFis.Data.Models.BaseData
     public class UnitValueDbModel
     {
         /// <summary>
-        /// 蜗居id
-        /// </summary>
-        [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [DBColumn("SfId")]
-        public int SfId { get; set; }
-
-        /// <summary>
         /// 单位类别id
         /// </summary>
         [DBColumn("UnitTypeId")]
@@ -34,7 +25,6 @@ namespace SnailFis.Data.Models.BaseData
         /// 单位id
         /// </summary>
         [Key]
-        [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DBColumn("UnitId")]
         public int UnitId { get; set; }
@@ -47,22 +37,10 @@ namespace SnailFis.Data.Models.BaseData
         public string UnitName { get; set; }
 
         /// <summary>
-        /// 创建人
-        /// </summary>
-        [DBColumn("CreatedBy")]
-        public int CreatedBy { get; set; }
-
-        /// <summary>
         /// 创建时间
         /// </summary>
         [DBColumn("CreatedDate")]
         public DateTime CreatedDate { get; set; }
-
-        /// <summary>
-        /// 修改人
-        /// </summary>
-        [DBColumn("ModifiedBy")]
-        public int ModifiedBy { get; set; }
 
         /// <summary>
         /// 修改时间

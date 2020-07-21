@@ -10,11 +10,9 @@ namespace SnailFis.Controllers
 {
     public class BaseApiController : ApiController
     {
-        public int SfId { get; }
         public int UserSn { get; }
         public BaseApiController()
         {
-            SfId = 100000001;
             UserSn = CommonSettings.UserSn;
         }
     }

@@ -2,9 +2,6 @@ import AxiosPack from "@/scripts/AxiosPack.js";
 
 const baseUrl = process.env.API_ROOT;
 const snailFisUrls = {
-    Dictionarys: {
-        GetDicList:"get /Dictionarys/GetDicList",
-    },
     SysUser:{
         AddUser:"/SysUser/AddUser",
         UpdateUser:"/SysUser/UpdateUser",

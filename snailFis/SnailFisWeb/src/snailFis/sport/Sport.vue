@@ -21,7 +21,7 @@ export default {
     methods:{
         init(){
             var self =this;
-            self.$allAxios.Dictionarys.GetDicList().then((res)=>{
+            self.$allAxios.Test.GetBankList().then((res)=>{
                 self.isSuccess=res.Success;
             });
         }

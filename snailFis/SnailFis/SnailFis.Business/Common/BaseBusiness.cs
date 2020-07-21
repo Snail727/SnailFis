@@ -12,16 +12,11 @@ namespace SnailFis.Business.Common
     public class BaseBusiness
     {
         /// <summary>
-        /// 蜗居id
-        /// </summary>
-        public int SfId { get; }
-        /// <summary>
         /// 用户编码
         /// </summary>
         public int UserSn { get; }
-        public BaseBusiness(int sfId, int userSn)
+        public BaseBusiness(int userSn)
         {
-            SfId = sfId;
             UserSn = userSn;
         }
     }
