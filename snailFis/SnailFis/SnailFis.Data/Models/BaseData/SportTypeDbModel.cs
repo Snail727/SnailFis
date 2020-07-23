@@ -12,23 +12,39 @@ namespace SnailFis.Data.Models.BaseData
     /// <summary>
     /// 运动类型信息基类
     /// </summary>
-    [Table("bt_sport_type")]
+    [Table("sport_type")]
     public class SportTypeDbModel
     {
+        /// <summary>
+        /// 用户编码
+        /// </summary>
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DBColumn("UserSn")]
+        public int UserSn { get; set; }
+
         /// <summary>
         /// 运动类型id
         /// </summary>
         [Key]
+        [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [DBColumn("SportId")]
-        public int SportId { get; set; }
+        [DBColumn("SportTypeId")]
+        public int SportTypeId { get; set; }
 
         /// <summary>
         /// 运动类型名称
         /// </summary>
         [StringLength(64)]
         [DBColumn("SportName")]
-        public string SportName { get; set; }
+        public string SportTypeName { get; set; }
+
+        /// <summary>
+        /// 单位id
+        /// </summary>
+        [DBColumn("UnitId")]
+        public int UnitId { get; set; }
 
         /// <summary>
         /// 创建时间

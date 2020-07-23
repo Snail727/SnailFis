@@ -21,11 +21,11 @@
         /// <summary>
         /// 单位类别列表
         /// </summary>
-        public virtual DbSet<UnitTypeDbModel> UnitTypeList { get; set; }
+        //public virtual DbSet<UnitTypeDbModel> UnitTypeList { get; set; }
         /// <summary>
         /// 单位列表
         /// </summary>
-        public virtual DbSet<UnitValueDbModel> UnitValueList { get; set; }
+        //public virtual DbSet<UnitValueDbModel> UnitValueList { get; set; }
         /// <summary>
         /// 运动类别列表
         /// </summary>
@@ -33,6 +33,6 @@
         /// <summary>
         /// 运动记录列表
         /// </summary>
-        public virtual DbSet<SportValueDbModel> SportValueList { get; set; }
+        //public virtual DbSet<SportValueDbModel> SportValueList { get; set; }
     }
 }

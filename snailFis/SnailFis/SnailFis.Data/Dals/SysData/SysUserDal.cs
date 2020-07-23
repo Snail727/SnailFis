@@ -38,7 +38,7 @@ namespace SnailFis.Data.Dals.SysData
         public List<SysUserModel> GetUserListByPhone(string phone)
         {
             var db = new SnailFisDbContext();
-            var tempList = db.UserList.Where(v=>v.Phone==phone);
+            var tempList = db.UserList.Where(v=>v.Phone==phone).ToList();
             if (tempList == null) { return null; };
             var list = tempList.Select(v => ToSysUserModel(v)).ToList();
             return list;
