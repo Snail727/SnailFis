@@ -1,6 +1,7 @@
 ﻿namespace SnailFis.Data.EfModel
 {
     using SnailFis.Data.Models.BaseData;
+    using SnailFis.Data.Models.Sport;
     using SnailFis.Data.Models.SysData;
     using System;
     using System.Data.Entity;
@@ -19,20 +20,28 @@
         /// </summary>
         public virtual DbSet<SysUserDbModel> UserList { get; set; }
         /// <summary>
+        /// 公共信息列表
+        /// </summary>
+        public virtual DbSet<SysCommonDbModel> CommonList { get; set; }
+        /// <summary>
         /// 单位类别列表
         /// </summary>
-        //public virtual DbSet<UnitTypeDbModel> UnitTypeList { get; set; }
+        public virtual DbSet<UnitTypeDbModel> UnitTypeList { get; set; }
         /// <summary>
         /// 单位列表
         /// </summary>
-        //public virtual DbSet<UnitValueDbModel> UnitValueList { get; set; }
+        public virtual DbSet<UnitValueDbModel> UnitValueList { get; set; }
         /// <summary>
         /// 运动类别列表
         /// </summary>
         public virtual DbSet<SportTypeDbModel> SportTypeList { get; set; }
         /// <summary>
-        /// 运动记录列表
+        /// 运动记录主列表
         /// </summary>
-        //public virtual DbSet<SportValueDbModel> SportValueList { get; set; }
+        public virtual DbSet<SportMainDbModel> SportMainList { get; set; }
+        /// <summary>
+        /// 运动记录子列表
+        /// </summary>
+        public virtual DbSet<SportChildDbModel> SportChildList { get; set; }
     }
 }

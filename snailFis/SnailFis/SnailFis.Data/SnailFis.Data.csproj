@@ -81,9 +81,11 @@
     <Compile Include="Dals\SysData\SysUserDal.cs" />
     <Compile Include="EfModel\SnailFisDbContext.cs" />
     <Compile Include="Models\BaseData\UnitTypeDbModel.cs" />
-    <Compile Include="Models\BaseData\SportTypeDbModel.cs" />
+    <Compile Include="Models\Sport\SportTypeDbModel.cs" />
     <Compile Include="Models\BaseData\UnitValueDbModel.cs" />
-    <Compile Include="Models\BaseData\SportValueDbModel.cs" />
+    <Compile Include="Models\Sport\SportChildDbModel.cs" />
+    <Compile Include="Models\Sport\SportMainDbModel.cs" />
+    <Compile Include="Models\SysData\SysCommonDbModel.cs" />
     <Compile Include="Models\SysData\SysUserDbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\MySQLHelper.cs" />

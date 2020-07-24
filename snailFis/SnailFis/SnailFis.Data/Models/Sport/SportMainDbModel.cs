@@ -5,15 +5,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SnailFis.Model.DBColumnAtrributes;
 
-namespace SnailFis.Data.Models.BaseData
+namespace SnailFis.Data.Models.Sport
 {
     /// <summary>
-    /// 运动类型信息基类
+    /// 运动项目主表信息基类
     /// </summary>
-    [Table("sport_type")]
-    public class SportTypeDbModel
+    [Table("sport_main")]
+    [Serializable]
+    public class SportMainDbModel
     {
         /// <summary>
         /// 用户编码
@@ -21,41 +21,41 @@ namespace SnailFis.Data.Models.BaseData
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [DBColumn("UserSn")]
         public int UserSn { get; set; }
 
         /// <summary>
-        /// 运动类型id
+        /// 运动id
         /// </summary>
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [DBColumn("SportTypeId")]
-        public int SportTypeId { get; set; }
+        public int SportId { get; set; }
 
         /// <summary>
-        /// 运动类型名称
+        /// 运动详情id
         /// </summary>
         [StringLength(64)]
-        [DBColumn("SportName")]
-        public string SportTypeName { get; set; }
+        public string SportNo { get; set; }
 
         /// <summary>
-        /// 单位id
+        /// 运动时间
         /// </summary>
-        [DBColumn("UnitId")]
-        public int UnitId { get; set; }
+        public DateTime SportDate { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [StringLength(256)]
+        public string Note { get; set; }
 
         /// <summary>
         /// 创建时间
         /// </summary>
-        [DBColumn("CreatedDate")]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// 修改时间
         /// </summary>
-        [DBColumn("ModifiedDate")]
         public DateTime ModifiedDate { get; set; }
     }
 }

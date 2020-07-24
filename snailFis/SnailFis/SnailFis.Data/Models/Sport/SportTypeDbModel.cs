@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using static SnailFis.Model.DBColumnAtrributes;
 
-namespace SnailFis.Data.Models.BaseData
+namespace SnailFis.Data.Models.Sport
 {
     /// <summary>
-    /// 单位信息基类
+    /// 运动类型信息基类
     /// </summary>
-    [Table("bt_unit_value")]
+    [Table("sport_type")]
     [Serializable]
-    public class UnitValueDbModel
+    public class SportTypeDbModel
     {
         /// <summary>
         /// 用户编码
@@ -25,23 +25,23 @@ namespace SnailFis.Data.Models.BaseData
         public int UserSn { get; set; }
 
         /// <summary>
-        /// 单位类别id
-        /// </summary>
-        public int UnitTypeId { get; set; }
-
-        /// <summary>
-        /// 单位id
+        /// 运动类型id
         /// </summary>
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UnitId { get; set; }
+        public int SportTypeId { get; set; }
 
         /// <summary>
-        /// 单位名称
+        /// 运动类型名称
         /// </summary>
         [StringLength(64)]
-        public string UnitName { get; set; }
+        public string SportTypeName { get; set; }
+
+        /// <summary>
+        /// 单位id
+        /// </summary>
+        public int UnitId { get; set; }
 
         /// <summary>
         /// 创建时间
