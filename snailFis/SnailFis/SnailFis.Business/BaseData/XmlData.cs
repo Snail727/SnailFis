@@ -1,4 +1,5 @@
 ﻿using SnailFis.Business.Common;
+using SnailFis.Common;
 using SnailFis.Data.Dals.BaseData;
 using SnailFis.Model.BusinessModels.XmlData;
 using System;
