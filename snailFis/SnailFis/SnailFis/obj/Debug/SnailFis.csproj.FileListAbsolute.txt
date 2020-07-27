@@ -689,3 +689,17 @@ F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.Diagnostics.PerformanceC
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.IO.Pipelines.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.Threading.Channels.xml
 F:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\SnailFis.Common.dll.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Pipelines.Sockets.Unofficial.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\StackExchange.Redis.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.IO.Pipelines.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.Threading.Channels.dll
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\Pipelines.Sockets.Unofficial.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\StackExchange.Redis.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.IO.Pipelines.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\System.Threading.Channels.xml
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\SnailFis.Common.dll.config
+C:\Work2\SnailFis\snailFis\SnailFis\SnailFis\bin\zh-Hans\EntityFramework.SqlServer.resources.dll

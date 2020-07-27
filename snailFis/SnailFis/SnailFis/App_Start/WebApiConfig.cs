@@ -9,7 +9,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Cors;
 using System.Web.Http.Filters;
 using Newtonsoft.Json;
-using SnailFis.Common;
+using SnailFis.WebCommon;
 using SnailFis.Controllers;
 
 namespace SnailFis

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using SnailFis.Common;
+using SnailFis.Data.Common;
 using SnailFis.Data.Utilities;
 
 namespace SnailFis.Data.Dals.Common
@@ -31,6 +33,53 @@ namespace SnailFis.Data.Dals.Common
             }
             else { id = 100000001; }
             return id;
+        }
+        #endregion
+
+        #region GetRedisNextKey
+        /// <summary>
+        /// 根据redis获取下一个主键
+        /// </summary>
+        /// <param name="table">表信息</param>
+        /// <param name="mainKey">主键</param>
+        /// <param name="subKey">子键</param>
+        /// <returns></returns>
+        public int GetRedisNextKey(TableEnum table,int mainKey=0,int subKey=0) 
+        {
+            var tableKey = UserSn + "table" + table.ToString();
+            if (RedisHelper.HasKey(tableKey))
+            {
+                return (int)RedisHelper.Increment(tableKey);
+            }
+            else 
+            {
+                string sql = GetSelectSql(table, mainKey, subKey);
+                if (string.IsNullOrEmpty(sql)) { return (int)RedisHelper.IncrementInit(tableKey, 100000000); }
+                var tempId = MySQlHelper.ExecuteScalar(sql);
+                if (int.TryParse(tempId.ToString(), out int id))
+                {
+                    return (int)RedisHelper.IncrementInit(tableKey,(double)id);
+                }
+                else { return (int)RedisHelper.IncrementInit(tableKey,100000000); }
+            }
+        }
+        private string GetSelectSql(TableEnum table, int mainKey, int subKey) 
+        {
+            string sql;
+            switch (table)
+            {
+                case TableEnum.sys_user: sql = $"select max(UserSn) FROM `sys_user` "; break;
+                case TableEnum.sys_common1: sql = $"select max(FirstKey) FROM `sys_common` "; break;
+                case TableEnum.sys_common2: sql = $"select max(SecondKey) FROM `sys_common` where FirstKey={mainKey} "; break;
+                case TableEnum.sys_common3: sql = $"select max(ThirdKey) FROM `sys_common` where FirstKey={mainKey} and SecondKey={subKey} "; break;
+                case TableEnum.bt_unit_type: sql = $"select max(UnitTypeId) FROM `bt_unit_type` where UserSn={UserSn} "; break;
+                case TableEnum.bt_unit_value: sql = $"select max(UnitId) FROM `bt_unit_value` where UserSn={UserSn} "; break;
+                case TableEnum.sport_type: sql = $"select max(SportTypeId) FROM `sport_type` where UserSn={UserSn} "; break;
+                case TableEnum.sport_main: sql = $"select max(SportId) FROM `sport_main` where UserSn={UserSn} "; break;
+                case TableEnum.sport_child: sql = $"select max(SporteId) FROM `sport_child` where UserSn={UserSn} and SportId={mainKey} "; break;
+                default: sql = ""; break;
+            }
+            return sql;
         }
         #endregion
 

@@ -392,10 +392,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Common\LogHelper.cs" />
-    <Compile Include="Common\TokenException.cs" />
-    <Compile Include="Common\TokenHelper.cs" />
-    <Compile Include="Common\ValidationAttribute.cs" />
+    <Compile Include="WebCommon\LogHelper.cs" />
+    <Compile Include="WebCommon\TokenException.cs" />
+    <Compile Include="WebCommon\TokenHelper.cs" />
+    <Compile Include="WebCommon\ValidationAttribute.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseData\TestController.cs" />
     <Compile Include="Controllers\SysData\SysUserController.cs" />
@@ -506,6 +506,10 @@
     <ProjectReference Include="..\SnailFis.Business\SnailFis.Business.csproj">
       <Project>{bec5915e-45f5-4485-b776-45ed65718e26}</Project>
       <Name>SnailFis.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnailFis.Common\SnailFis.Common.csproj">
+      <Project>{E41B687A-EDFA-4E77-A9D5-AF3D2069D96F}</Project>
+      <Name>SnailFis.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\SnailFis.Model\SnailFis.Model.csproj">
       <Project>{f930dfd9-bda2-478a-8d82-a059a229fb5c}</Project>

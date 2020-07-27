@@ -1,4 +1,5 @@
-﻿using SnailFis.Data.Dals.Common;
+﻿using SnailFis.Data.Common;
+using SnailFis.Data.Dals.Common;
 using SnailFis.Data.EfModel;
 using SnailFis.Data.Models.SysData;
 using SnailFis.Data.Utilities;
@@ -93,7 +94,7 @@ namespace SnailFis.Data.Dals.SysData
         /// <returns></returns>
         public int AddUser(SysUserModel model)
         {
-            var nextUserSn = new BaseOptionsDal(0).GetNextUserSn();
+            var nextUserSn = new BaseOptionsDal(0).GetRedisNextKey(TableEnum.sys_user);
             var tempModel = ToSysUserDbModel(model);
             using (var db = new SnailFisDbContext()) 
             {

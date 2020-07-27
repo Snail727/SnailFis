@@ -1,5 +1,5 @@
 ﻿using SnailFis.Business.SysData;
-using SnailFis.Common;
+using SnailFis.WebCommon;
 using SnailFis.Model;
 using SnailFis.Models.SysData;
 using System;
@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SnailFis.Common;
 
 namespace SnailFis.Controllers.SysData
 {
@@ -96,14 +97,15 @@ namespace SnailFis.Controllers.SysData
             var refMsg = TokenHelper.DecodeToken(token.Refreshtoken);
             if (!refMsg.Success){ throw new HttpResponseException(HttpStatusCode.Unauthorized); }
 
-            /*redis获取refreshtoken并进行比对*/
-
             var tokenInfo = (TokenInfo)refMsg.Data;
             var user = new SysUser().GetUserListByPhone(tokenInfo.Phone).FirstOrDefault();
             if (user == null) { return new MessageModel(false, "该手机号尚未注册"); }
 
+            /*redis获取refreshtoken并进行比对*/
+            var refreshtoken = RedisHelper.Get<string>("refreshtoken");
+            if (refreshtoken != token.Refreshtoken) { throw new HttpResponseException(HttpStatusCode.Unauthorized); }
+
             var tokenData = CreatTokenData(user.UserName, user.UserSn, user.Phone);
-            tokenData.Refreshtoken = "";
             return new MessageModel(true, "刷新成功", tokenData);
         }
 
@@ -128,6 +130,7 @@ namespace SnailFis.Controllers.SysData
                 Phone = phone
             });
             /*redis储存refreshtoken*/
+            RedisHelper.Set(userSn+ "refreshtoken", refreshtoken);
             var tokenData = new TokenViewModel()
             {
                 Accesstoken = accesstoken,

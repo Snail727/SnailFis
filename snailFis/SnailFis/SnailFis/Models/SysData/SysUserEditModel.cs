@@ -1,4 +1,4 @@
-﻿using SnailFis.Common;
+﻿using SnailFis.WebCommon;
 using SnailFis.Model.BusinessModels.SysData;
 using System;
 using System.Collections.Generic;

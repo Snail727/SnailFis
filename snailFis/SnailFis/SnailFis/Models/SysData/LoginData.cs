@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using SnailFis.Common;
+using SnailFis.WebCommon;
 
 namespace SnailFis.Models.SysData
 {

@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\TableEnum.cs" />
     <Compile Include="Common\XmlHelper.cs" />
     <Compile Include="Dals\BaseData\XmlDal.cs" />
     <Compile Include="Dals\Common\BaseDal.cs" />

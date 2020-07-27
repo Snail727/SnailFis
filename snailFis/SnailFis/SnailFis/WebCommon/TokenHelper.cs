@@ -9,7 +9,7 @@ using JWT.Algorithms;
 using JWT.Serializers;
 using SnailFis.Model;
 
-namespace SnailFis.Common
+namespace SnailFis.WebCommon
 {
     public static class TokenHelper
     {

@@ -38,4 +38,3 @@ C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.cspr
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csproj.CopyComplete
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.dll
 C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.pdb
-C:\Work2\SnailFis\snailFis\SnailFis\SnailFis.Model\obj\Debug\SnailFis.Model.csprojAssemblyReference.cache

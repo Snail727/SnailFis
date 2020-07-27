@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using SnailFis.Model;
 
-namespace SnailFis.Common
+namespace SnailFis.WebCommon
 {
     public class ValidationAttribute : Attribute
     {
